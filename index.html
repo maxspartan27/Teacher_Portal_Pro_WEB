@@ -1,0 +1,1282 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081b38">
+  <meta name="description" content="Teacher Portal Pro v3.1 (build 211) RS4 — потужний український освітній портал із ШІ-асистентом Gemini/ChatGPT, голосовими нотатками, тренажером студента, хмарним журналом та 8 темами.">
+  <title>Teacher Portal Pro v3.1 (build 211) RS4 — ВСП «Стрийський фаховий коледж ЛНУП»</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body data-theme="aurora" data-banner-art="on" data-glow="on">
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6C8.7 4 5.7 4 2 5v15c3.7-1 6.7-1 10 1 3.3-2 6.3-2 10-1V5c-3.7-1-6.7-1-10 1zm0 0v15"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5zM6 12v6c4 3 8 3 12 0v-6m4-3v9"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 6-4 9-9 10-5-1-9-4-9-10V6zM9 12l2 2 4-4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2zM16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 17v-5h3v5m2 0V7h3v10m2 0v-8h3v8"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM14 2v6h5M8 13h8M8 17h8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v3"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22v-2a8 8 0 0 1 16 0v2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 18v3h16v-3"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M10 2h4l1 3 3 1 3-1 2 4-2 2v2l2 2-2 4-3-1-3 1-1 3h-4l-1-3-3-1-3 1-2-4 2-2v-2L1 9l2-4 3 1 3-1z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.1M3 12h.1M3 18h.1"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 16A8 8 0 0 1 8 4 8 8 0 1 0 20 16z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M20 4l-2 2M6 18l-2 2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6m10-6v6M3 10h18"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 4V2h6v2M9 11h6m-6 5h6"/></symbol>
+  <symbol id="i-log" viewBox="0 0 24 24"><path d="M14 3h6v18h-6M4 12h12m-5-5 5 5-5 5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 11v6m0-10v1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m2 7 10 7 10-7"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0 0 20 2.5 2.5 0 0 0 2.5-2.5c0-.6-.2-1.2-.6-1.6-.4-.4-.6-1-.6-1.6A2.5 2.5 0 0 1 15.8 14H18a4 4 0 0 0 4-4c0-4.4-4.5-8-10-8z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H7a5 5 0 0 1-.5-9.97A7 7 0 0 1 20 10.5a4.5 4.5 0 0 1-2.5 8.5z"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24"><path d="M21 2v6h-6M3 12a9 9 0 0 1 15-6.7L21 8M3 22v-6h6M21 12a9 9 0 0 1-15 6.7L3 16"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9zM5 17l.6 1.4L7 19l-1.4.6L5 21l-.6-1.4L3 19l1.4-.6z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.9 17 22l-5-3-5 3 1.52-9.1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5m-4 0h8"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3m6-3v3M9 20v3m6-3v3M20 9h3m-3 6h3M1 9h3m-3 6h3"/></symbol>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="#home" data-nav="home" aria-label="Teacher Portal Pro — головна">
+      <span class="brand-mark"><img src="assets/college-emblem.svg" alt="Стилізована емблема коледжу"></span>
+      <span class="brand-copy">
+        <strong>Teacher Portal <em>Pro</em> <span class="ver-pill">v3.1 RS4</span></strong>
+        <small>СТРИЙСЬКИЙ ФАХОВИЙ КОЛЕДЖ ЛНУП · build 211</small>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="Основні розділи">
+      <button class="top-link selected" data-nav="home"><svg class="icon nav-ico"><use href="#i-home"/></svg> Головна</button>
+      <button class="top-link" data-nav="materials"><svg class="icon nav-ico"><use href="#i-book"/></svg> Матеріали</button>
+      <button class="top-link" data-nav="student" data-role="student"><svg class="icon nav-ico"><use href="#i-hat"/></svg> Студенту</button>
+      <button class="top-link" data-nav="admin" data-role="teacher"><svg class="icon nav-ico"><use href="#i-shield"/></svg> Викладачу</button>
+      <button class="top-link" data-nav="khrystyna"><svg class="icon nav-ico icon-pulse"><use href="#i-cloud"/></svg> Додатково</button>
+      <button class="top-link" data-nav="about"><svg class="icon nav-ico"><use href="#i-info"/></svg> Про проєкт</button>
+    </nav>
+    <div class="header-actions">
+      <div class="quick-role-bar" aria-label="Швидка автоматична авторизація">
+        <button class="btn tiny quick-auth-btn student-quick" data-quick-auth="student" title="Автоматичний вхід: Студент (авто-логін і пароль)">
+          <svg class="icon icon-bounce"><use href="#i-hat"/></svg> Студент
+        </button>
+        <button class="btn tiny quick-auth-btn teacher-quick" data-quick-auth="teacher" title="Автоматичний вхід: Викладач (авто-логін і пароль)">
+          <svg class="icon icon-pulse"><use href="#i-shield"/></svg> Викладач
+        </button>
+      </div>
+      <div class="theme-group" aria-label="Теми оформлення">
+        <button class="theme-dot aurora on" data-theme-choice="aurora" title="Аврора (Північне сяйво)" aria-label="Аврора"></button>
+        <button class="theme-dot emerald" data-theme-choice="emerald" title="Смарагд (Кібер-ліс)" aria-label="Смарагд"></button>
+        <button class="theme-dot daylight" data-theme-choice="daylight" title="Світлий день" aria-label="Світлий день"></button>
+        <button class="theme-dot sunset" data-theme-choice="sunset" title="Карпатський захід" aria-label="Карпатський захід"></button>
+        <button class="theme-dot cyber" data-theme-choice="cyber" title="Неоновий кіберпростір" aria-label="Неоновий кіберпростір"></button>
+        <button class="theme-dot ocean" data-theme-choice="ocean" title="Океанічний бриз" aria-label="Океанічний бриз"></button>
+        <button class="theme-dot sakura" data-theme-choice="sakura" title="Квітуча Сакура (RS4)" aria-label="Квітуча Сакура"></button>
+        <button class="theme-dot gold" data-theme-choice="gold" title="Королівський Онікс і Золото (RS4)" aria-label="Королівський Онікс і Золото"></button>
+        <button class="theme-studio-btn" id="openThemeStudio" title="Галерея 8 тем із зображеннями та анімацією" aria-label="Галерея тем">
+          <svg class="icon icon-spin-hover"><use href="#i-palette"/></svg>
+        </button>
+      </div>
+      <button class="btn small ghost" id="headerLogin">Увійти</button>
+      <button class="btn small primary" id="headerRegister">Реєстрація <svg class="icon"><use href="#i-arrow"/></svg></button>
+      <button class="profile-button hidden" id="profileButton"><span id="profileInitial">К</span><b id="profileText">Мій кабінет</b></button>
+      <button class="icon-button hamburger" id="mobileMenuButton" aria-label="Відкрити меню"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-menu hidden" id="mobileMenu" aria-label="Мобільне меню">
+    <button data-nav="home">🏠 Головна</button>
+    <button data-nav="materials">📚 Матеріали</button>
+    <button data-nav="student" data-role="student">🎓 Кабінет студента</button>
+    <button data-nav="admin" data-role="teacher">🛡️ Кабінет викладача (Адмін + AI)</button>
+    <button data-nav="khrystyna">☁️ Додатково (Хмарний журнал)</button>
+    <a href="khrystyna.html" class="mobile-ext-link">☁️ Додатково (Окрема HTML-сторінка) ↗</a>
+    <button data-nav="about">ℹ️ Про проєкт</button>
+    <div class="mobile-quick-auth">
+      <span>⚡ Авто-авторизація (1 клік):</span>
+      <button data-quick-auth="student">🎓 Увійти як Студент</button>
+      <button data-quick-auth="teacher">🛡️ Увійти як Викладач</button>
+    </div>
+    <button data-mobile-auth="login">Форма входу</button>
+    <button data-mobile-auth="register">Створити акаунт</button>
+    <div class="mobile-themes">
+      <span>8 тем із зображеннями та анімацією</span>
+      <button data-theme-choice="aurora">Аврора</button>
+      <button data-theme-choice="emerald">Смарагд</button>
+      <button data-theme-choice="daylight">Світлий день</button>
+      <button data-theme-choice="sunset">Захід</button>
+      <button data-theme-choice="cyber">Кібер</button>
+      <button data-theme-choice="ocean">Океан</button>
+      <button data-theme-choice="sakura">Сакура</button>
+      <button data-theme-choice="gold">Золото</button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<section id="view-home" class="view active">
+  <div class="home-hero-wrap">
+    <div class="hero-particles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="home-hero container">
+      <div class="home-copy reveal">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> МАКСИМАЛЬНИЙ РЕЛІЗ v3.1 (build 211) RS4 · AI &amp; CLOUD PORTAL</span>
+        <h1>Освіта, що <span class="gradient-word">надихає.</span><br>Інтелект, що <span class="gradient-word">прискорює.</span></h1>
+        <p class="hero-lead">Ласкаво просимо до <b>Teacher Portal Pro v3.1 (build 211) RS4</b> — посиленої освітньої платформи ВСП «Стрийський фаховий коледж ЛНУП». ШІ-асистент <b>Gemini &amp; ChatGPT</b> для викладача, голосові нотатки й конспекти до дисциплін, інтерактивний тренажер студента, радарна аналітика та 8 тем із зображеннями. Автор на головній та в загальному: <b>Максим Ковалишин</b>.</p>
+        <div class="hero-buttons">
+          <button class="btn primary large" data-quick-auth="teacher"><svg class="icon icon-pulse"><use href="#i-bolt"/></svg> Авто-вхід: Викладач (AI + Адмін)</button>
+          <button class="btn glass large" data-quick-auth="student"><svg class="icon icon-bounce"><use href="#i-hat"/></svg> Авто-вхід: Студент (Тренажер + Голосові)</button>
+          <button class="btn outline large" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Додатково (Хмарна архітектура)</button>
+        </div>
+        <div class="hero-trust">
+          <span><svg class="icon icon-pulse"><use href="#i-sparkles"/></svg> Gemini &amp; ChatGPT для викладача</span>
+          <span><svg class="icon icon-bounce"><use href="#i-mic"/></svg> Голосові нотатки й конспекти</span>
+          <span><svg class="icon icon-float"><use href="#i-cpu"/></svg> Тренажер і флеш-картки студента</span>
+          <span><svg class="icon icon-spin-hover"><use href="#i-palette"/></svg> 8 анімованих тем із зображеннями</span>
+        </div>
+      </div>
+      <div class="home-illustration reveal" aria-label="Ілюстрація електронної освітньої платформи">
+        <img class="hero-scene" id="heroIllustrationImg" src="assets/learning-world.svg" alt="Ілюстрація відкритої книги, ноутбука та навчального простору">
+        <div class="floating-panel float-top"><span class="float-icon blue"><svg class="icon icon-pulse"><use href="#i-sparkles"/></svg></span><span><small>ШІ-асистент RS4</small><b id="heroCloudStatusText">Gemini &amp; ChatGPT · Активно</b></span><span class="online-dot"></span></div>
+        <div class="floating-panel float-bottom"><span class="float-icon green"><svg class="icon icon-bounce"><use href="#i-mic"/></svg></span><span><small>Нові можливості</small><b>v3.1 (build 211) RS4</b></span><span class="pill-mini">ULTIMATE RS4</span></div>
+      </div>
+    </div>
+    <div class="hero-orb orb-one" aria-hidden="true"></div><div class="hero-orb orb-two" aria-hidden="true"></div>
+  </div>
+
+  <!-- ЖИВИЙ ПУЛЬС ПОРТАЛУ НА ГОЛОВНІЙ -->
+  <div class="container">
+    <div class="portal-pulse-bar panel reveal" id="homePulseBar"></div>
+  </div>
+
+  <div class="container content-block">
+    <div class="section-head centered reveal">
+      <span class="section-tag"><svg class="icon icon-pulse"><use href="#i-bolt"/></svg> МИТТЄВИЙ ДОСТУП · АВТОМАТИЧНА АВТОРИЗАЦІЯ RS4</span>
+      <h2>Два потужні простори — один клік до старту.</h2>
+      <p>Натисніть кнопку «Викладач» або «Студент» — система автоматично підставить логін і пароль та відкриє оновлений кабінет версії v3.1 (build 211) RS4.</p>
+    </div>
+    <div class="role-grid">
+      <article class="role-card student-card reveal">
+        <div class="role-card-art"><img src="assets/learning-world.svg" alt="Кабінет студента"></div>
+        <div class="role-sphere student-sphere"><svg class="icon icon-bounce"><use href="#i-hat"/></svg></div>
+        <span class="role-label">Для здобувачів освіти · К-41</span>
+        <h3>Кабінет студента · Нотатки, Голосові й Тренажер</h3>
+        <p>Пишіть текстові конспекти й записуйте голосові повідомлення до дисциплін, тренуйтеся на інтерактивних тестах і 3D флеш-картках, моделюйте оцінки та здавайте роботи.</p>
+        <ul>
+          <li>Письмові конспекти та голосові повідомлення до дисциплін</li>
+          <li>Тренажер-вікторина, 3D флеш-картки та пісочниця коду</li>
+          <li>Симулятор оцінок, шкала ЄКТС та бейджі досягнень</li>
+        </ul>
+        <div class="role-card-actions">
+          <button class="btn primary" data-quick-auth="student"><svg class="icon icon-pulse"><use href="#i-bolt"/></svg> Студент (Авто-вхід)</button>
+          <button class="btn outline" data-role-open="student">Форма входу</button>
+        </div>
+      </article>
+      <article class="role-card teacher-card reveal">
+        <div class="role-card-art"><img src="assets/ai-assistant-world.svg" alt="Кабінет викладача Pro + AI"></div>
+        <div class="role-sphere teacher-sphere"><svg class="icon icon-pulse"><use href="#i-shield"/></svg></div>
+        <span class="role-label">Для викладачів та адміністраторів</span>
+        <h3>Кабінет викладача · Gemini/ChatGPT та Аналітика</h3>
+        <p>Інтегрований пошуковий і генеративний запит до Gemini або ChatGPT для створення завдань і тестів, прослуховування голосових від студентів, радарна діаграма та розумний журнал.</p>
+        <ul>
+          <li>Пошуковий ШІ-хаб Gemini &amp; ChatGPT для генерації завдань</li>
+          <li>Прослуховування голосових нотаток і перевірка робіт у 1 клік</li>
+          <li>Радар компетентностей, гістограма ЄКТС та 2-рядкові підсумки таблиць</li>
+        </ul>
+        <div class="role-card-actions">
+          <button class="btn primary" data-quick-auth="teacher"><svg class="icon icon-pulse"><use href="#i-bolt"/></svg> Викладач (Авто-вхід)</button>
+          <button class="btn outline" data-role-open="teacher">Форма входу</button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- ІНТЕРАКТИВНИЙ ЦЕНТР НОВИХ МОЖЛИВОСТЕЙ НА ГОЛОВНІЙ -->
+  <div class="container content-block">
+    <div class="section-head centered reveal">
+      <span class="section-tag"><svg class="icon icon-spin-hover"><use href="#i-sparkles"/></svg> ІНТЕРАКТИВНИЙ ОГЛЯД ФІШОК · v3.1 (build 211) RS4</span>
+      <h2>Повний арсенал інновацій релізу RS4</h2>
+      <p>Перемикайте вкладки нижче, щоб дослідити ШІ-асистента викладача, голосові нотатки студентів, тренажер, хмарне сховище та розумні таблиці.</p>
+    </div>
+    <div class="home-feature-hub panel">
+      <div class="hub-tabs" role="tablist">
+        <button class="hub-tab active" data-hub-tab="ai"><svg class="icon icon-pulse"><use href="#i-sparkles"/></svg> Gemini &amp; ChatGPT Викладачу</button>
+        <button class="hub-tab" data-hub-tab="voice"><svg class="icon icon-bounce"><use href="#i-mic"/></svg> Нотатки й Голосові студента</button>
+        <button class="hub-tab" data-hub-tab="trainer"><svg class="icon icon-float"><use href="#i-cpu"/></svg> Тренажер і 3D Картки</button>
+        <button class="hub-tab" data-hub-tab="cloud"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Хмарний журнал (Додатково)</button>
+        <button class="hub-tab" data-hub-tab="visuals"><svg class="icon icon-spin-hover"><use href="#i-palette"/></svg> 8 Тем і Графіки RS4</button>
+      </div>
+      <div id="homeHubContent" class="hub-body"></div>
+    </div>
+  </div>
+
+  <!-- ГАЛЕРЕЯ 8 АНІМОВАНИХ ТЕМ ІЗ ЗОБРАЖЕННЯМИ -->
+  <div class="container content-block">
+    <div class="section-head centered reveal">
+      <span class="section-tag"><svg class="icon icon-spin-hover"><use href="#i-palette"/></svg> ВІЗУАЛЬНА ПЕРСОНАЛІЗАЦІЯ · 8 HD ТЕМ</span>
+      <h2>Вісім тем із зображеннями та живою анімацією</h2>
+      <p>Обирайте між класичними та новими ексклюзивними темами релізу RS4 («Квітуча Сакура» та «Королівський Онікс і Золото»).</p>
+    </div>
+    <div class="theme-showcase-grid" id="homeThemeShowcase"></div>
+  </div>
+
+  <div class="container content-block feature-block">
+    <div class="feature-picture"><img src="assets/cloud-sync-world.svg" alt="Ілюстрація інтеграції електронного журналу у хмарне сховище"></div>
+    <div class="feature-copy">
+      <span class="section-tag"><svg class="icon icon-float"><use href="#i-cloud"/></svg> ЧОМУ ВЕРСІЯ v3.1 (build 211) RS4 НАЙПОТУЖНІША</span>
+      <h2>Штучний інтелект,<br><span>голос та хмарна аналітика.</span></h2>
+      <p>Платформа поєднує зручність миттєвої авторизації, голосові та текстові конспекти до дисциплін, пошуковий ШІ-запит Gemini / ChatGPT у кабінеті викладача та глибоку хмарну телеметрію в розділі <b>«Додатково»</b>.</p>
+      <div class="features">
+        <div><svg class="icon icon-pulse"><use href="#i-sparkles"/></svg><span>Пошуковий ШІ Gemini &amp; ChatGPT</span></div>
+        <div><svg class="icon icon-bounce"><use href="#i-mic"/></svg><span>Голосові повідомлення та нотатки</span></div>
+        <div><svg class="icon icon-float"><use href="#i-cpu"/></svg><span>Інтерактивний тренажер і тести</span></div>
+        <div><svg class="icon icon-spin-hover"><use href="#i-chart"/></svg><span>Радар компетентностей і ЄКТС</span></div>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn primary" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Перейти в «Додатково» (Хмара + Калькулятор БД)</button>
+        <button class="btn outline" data-nav="about">Про проєкт <svg class="icon"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content-block">
+    <div class="author-spotlight-banner panel">
+      <div class="author-spotlight-main">
+        <span class="section-tag"><svg class="icon icon-pulse"><use href="#i-award"/></svg> АВТОРСЬКІ ПРАВА ТА КОМАНДА ПРОЄКТУ · v3.1 (build 211) RS4</span>
+        <h3>Автор (головна сторінка і в загальному): Максим Ковалишин</h3>
+        <p>Адмін: <b>Максим Ковалишин</b> · Модератор: <b>Христина Небещанська</b> · Викладач: <b>Тетяна Гаркот</b></p>
+      </div>
+      <div class="author-spotlight-actions">
+        <button class="btn primary" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Додатково (Хмарний журнал) <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <a class="btn outline" href="khrystyna.html">Окрема сторінка «Додатково» ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content-block">
+    <div class="quote-banner">
+      <img src="assets/college-emblem.svg" alt="Стилізована емблема" width="72" height="72">
+      <div><b>ВСП «Стрийський фаховий коледж ЛНУП»</b><span>Знання, ШІ-інструменти, хмарні технології та нові можливості — разом. Реліз v3.1 (build 211) RS4.</span></div>
+      <a class="btn ghost" href="https://sclnau.com.ua/" target="_blank" rel="noopener noreferrer">Сайт коледжу ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="view-materials" class="view">
+  <div class="container inner-page">
+    <div class="page-banner materials-banner">
+      <div>
+        <span class="section-tag"><svg class="icon icon-bounce"><use href="#i-book"/></svg> НАВЧАЛЬНА БІБЛІОТЕКА ТА КОНСПЕКТИ · v3.1 RS4</span>
+        <h1>Матеріали дисциплін</h1>
+        <p>Добірка лекцій, практичних, презентацій і контрольних. До кожного матеріалу студент може створити текстову нотатку або прикріпити голосове повідомлення.</p>
+      </div>
+      <img src="assets/classroom-world.svg" alt="Книги та цифрове навчання">
+    </div>
+    <div class="panel filter-panel">
+      <div class="search-wrap"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="materialSearch" placeholder="Пошук теми чи ресурсу" aria-label="Пошук матеріалів"></div>
+      <div class="tab-pills" id="materialTabs">
+        <button class="pill active" data-material-filter="all">Усі</button>
+        <button class="pill" data-material-filter="lecture">Лекції</button>
+        <button class="pill" data-material-filter="practice">Практичні</button>
+        <button class="pill" data-material-filter="control">Контрольні</button>
+        <button class="pill" data-material-filter="presentation">Презентації</button>
+      </div>
+    </div>
+    <div class="resource-grid" id="materialGrid"></div>
+    <div class="disclaimer"><svg class="icon icon-pulse"><use href="#i-info"/></svg> Натисніть «Конспект / Голосове» на будь-якій картці матеріалу, щоб додати власну нотатку чи аудіозапис до цієї теми.</div>
+  </div>
+</section>
+
+<section id="view-student" class="view">
+  <div class="container inner-page">
+    <div class="app-titlebar">
+      <div>
+        <span class="section-tag"><svg class="icon icon-bounce"><use href="#i-hat"/></svg> ОСОБИСТИЙ ПРОСТІР ЗДОБУВАЧА ОСВІТИ · v3.1 (build 211) RS4</span>
+        <h1 id="studentGreeting">Мій кабінет студента</h1>
+        <p>Персональний журнал, текстові та голосові нотатки до дисциплін, інтерактивний тренажер знань, симулятор балів і здача робіт.</p>
+      </div>
+      <div class="student-titlebar-actions">
+        <label class="student-Inline-picker">
+          <span>Профіль групи К-41:</span>
+          <select id="studentProfileSelect" aria-label="Вибір профілю студента"></select>
+        </label>
+        <span class="role-badge"><svg class="icon icon-pulse"><use href="#i-hat"/></svg> Студент · RS4</span>
+      </div>
+    </div>
+
+    <div class="student-hero panel">
+      <div>
+        <span class="eyebrow dark" id="studentRankBadge">НАВЧАЛЬНИЙ СЕМЕСТР · РЕЙТИНГ ГРУПИ</span>
+        <h2 id="studentHeroTitle">Навчайся, тренуйся та надсилай голосові нотатки.</h2>
+        <p id="studentHeroSub">Використовуйте інтерактивний тренажер із флеш-картками, записуйте голосові коментарі до дисциплін і моделюйте свій стипендіальний бал.</p>
+        <div class="hero-buttons">
+          <button class="btn primary" data-nav="materials"><svg class="icon"><use href="#i-book"/></svg> Бібліотека матеріалів</button>
+          <button class="btn outline" id="openThemeStudioStudent"><svg class="icon icon-spin-hover"><use href="#i-palette"/></svg> Змінити тему (8)</button>
+        </div>
+      </div>
+      <img src="assets/learning-world.svg" alt="Навчання онлайн">
+    </div>
+
+    <div class="stats-grid stats-grid-6" id="studentStats"></div>
+
+    <!-- НОВИЙ БЛОК: КОНСПЕКТИ ДО ДИСЦИПЛІН ТА ГОЛОСОВІ ПОВІДОМЛЕННЯ СТУДЕНТА -->
+    <div class="panel student-voice-notes-panel" id="studentNotesVoiceSection" style="margin-bottom:22px">
+      <div class="panel-heading">
+        <div>
+          <h3><svg class="icon icon-bounce"><use href="#i-mic"/></svg> Мої нотатки до дисциплін та голосові повідомлення викладачу</h3>
+          <p>Створюйте письмові конспекти до лекцій і практичних або записуйте та відправляйте голосові нотатки безпосередньо в кабінет викладача</p>
+        </div>
+        <span class="badge">Текст + Голос · RS4</span>
+      </div>
+
+      <div class="voice-notes-grid">
+        <div class="note-composer-box">
+          <form id="studentDisciplineNoteForm">
+            <div class="form-field">
+              <label for="noteDisciplineSelect">Оберіть дисципліну / тему заняття</label>
+              <select id="noteDisciplineSelect">
+                <option value="Вебтехнології: Загальний конспект">📘 Вебтехнології та вебдизайн (Загальне)</option>
+                <option value="Лекція №1: Архітектура вебу та HTTP">📖 Лекція №1: Архітектура вебу та HTTP</option>
+                <option value="Лекція №2: HTML5 та семантика">📖 Лекція №2: Основи HTML5 та семантики</option>
+                <option value="Лекція №3: CSS3 Flexbox і Grid">📖 Лекція №3: CSS3 Flexbox, Grid і адаптивність</option>
+                <option value="Практичні роботи №1–3: Проєктування UI/JS">💻 Практичні роботи №1–3: Проєктування UI/JS</option>
+                <option value="Хмарні бази даних та інтеграція журналу">☁️ Хмарні бази даних та інтеграція журналу</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="studentNoteText">Текст нотатки або питання до викладача</label>
+              <textarea id="studentNoteText" rows="3" maxlength="800" placeholder="Запишіть головні тези лекції, питання до практичної або натисніть «Голосовий ввід»..."></textarea>
+            </div>
+            <div class="voice-recorder-bar">
+              <div class="voice-controls">
+                <button type="button" class="btn small primary" id="startVoiceRecordBtn"><svg class="icon icon-pulse"><use href="#i-mic"/></svg> <span id="voiceRecordBtnText">Записати голосове</span></button>
+                <button type="button" class="btn small outline" id="speechToTextBtn" title="Диктувати текст голосом"><svg class="icon"><use href="#i-sparkles"/></svg> Диктувати текст</button>
+                <span class="voice-timer-pill" id="voiceTimerDisplay">00:00</span>
+              </div>
+              <div class="voice-visualizer" id="voiceVisualizer" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <small id="voiceStatusHint" class="muted">Готово до запису голосового повідомлення або текстового конспекту</small>
+            </div>
+            <div class="hero-buttons" style="margin-top:12px">
+              <button type="submit" class="btn small primary"><svg class="icon"><use href="#i-check"/></svg> Зберегти нотатку та надіслати викладачу</button>
+              <button type="button" class="btn small subtle" id="exportStudentNotesBtn"><svg class="icon"><use href="#i-download"/></svg> Експорт конспектів TXT</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="saved-notes-list-box">
+          <h4>Збережені нотатки та відправлені голосові (<span id="studentNotesCount">0</span>)</h4>
+          <div id="studentNotesList" class="student-notes-feed"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- НОВИЙ БЛОК: ЦЕНТР ТРЕНУВАННЯ СТУДЕНТА (ТРЕНАЖЕР-ВІКТОРИНА, 3D ФЛЕШ-КАРТКИ, ПІСОЧНИЦЯ КОДУ) -->
+    <div class="panel student-trainer-panel" style="margin-bottom:22px">
+      <div class="panel-heading">
+        <div>
+          <h3><svg class="icon icon-float"><use href="#i-cpu"/></svg> Центр тренування та самопідготовки студента (Training Arena RS4)</h3>
+          <p>Тренуйте знання перед контрольними роботами: інтерактивні тести з поясненнями, 3D флеш-картки термінів та жива пісочниця коду</p>
+        </div>
+        <div class="titlebar-btn-group">
+          <span class="badge" id="studentXpBadge">⚡ Досвід тренувань: 120 XP</span>
+          <span class="badge">Тренажер v3.1</span>
+        </div>
+      </div>
+
+      <div class="trainer-grid">
+        <!-- 1. Вікторина-тренажер -->
+        <div class="trainer-card">
+          <div class="trainer-card-head">
+            <h4>🧠 Експрес-тренажер (Тест із дисципліни)</h4>
+            <span class="badge" id="quizScoreBadge">0 / 5</span>
+          </div>
+          <div id="quizArenaBox" class="quiz-arena-box"></div>
+        </div>
+
+        <!-- 2. 3D Флеш-картки -->
+        <div class="trainer-card">
+          <div class="trainer-card-head">
+            <h4>🃏 Навчальні 3D Флеш-картки</h4>
+            <span class="badge" id="flashcardCounter">1 / 6</span>
+          </div>
+          <div id="flashcardBox" class="flashcard-stage" tabindex="0" role="button" aria-label="Натисніть, щоб перевернути флеш-картку"></div>
+          <div class="flashcard-controls">
+            <button type="button" class="btn tiny subtle" id="prevFlashcardBtn">← Попередня</button>
+            <button type="button" class="btn tiny outline" id="flipFlashcardBtn">↻ Перевернути картку</button>
+            <button type="button" class="btn tiny primary" id="nextFlashcardBtn">Наступна →</button>
+          </div>
+        </div>
+
+        <!-- 3. Жива пісочниця коду -->
+        <div class="trainer-card">
+          <div class="trainer-card-head">
+            <h4>💻 Жива пісочниця HTML/CSS для тренування</h4>
+            <button type="button" class="btn tiny subtle" id="resetPlaygroundBtn">Скинути шаблон</button>
+          </div>
+          <textarea id="playgroundCodeInput" class="playground-textarea" rows="4" aria-label="Код HTML та CSS для тренування"></textarea>
+          <div id="playgroundPreview" class="playground-preview"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-columns">
+      <div class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Мій журнал успішності та порівняння з групою</h3>
+            <p>Ваші поточні бали, прогрес за категоріями та відхилення від середнього бала групи К-41</p>
+          </div>
+          <span class="badge">12-бальна система · ЄКТС</span>
+        </div>
+        <div id="myGrades"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Симулятор майбутньої оцінки</h3>
+            <p>Дізнайтеся, як наступна оцінка вплине на ваш семестровий бал</p>
+          </div>
+          <span class="badge">Фішка v3.1 RS4</span>
+        </div>
+        <div class="simulator-box">
+          <div class="form-field">
+            <label for="simGradeRange">Уявна наступна оцінка: <strong id="simGradeValue">12</strong> балів</label>
+            <input type="range" id="simGradeRange" min="1" max="12" value="12" class="range-slider">
+          </div>
+          <div class="form-field">
+            <label for="simGradeCount">Кількість таких оцінок поспіль:</label>
+            <select id="simGradeCount">
+              <option value="1">1 наступна робота</option>
+              <option value="2">2 наступні роботи</option>
+              <option value="3">3 наступні роботи</option>
+            </select>
+          </div>
+          <div id="simResultBox" class="sim-result-box"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-columns" style="margin-top:20px">
+      <div class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Практичні та контрольні завдання (Здача робіт)</h3>
+            <p>Позначте виконані роботи, щоб надіслати їх у панель викладача на перевірку</p>
+          </div>
+          <span class="badge" id="studentTasksBadge">Інтерактивно</span>
+        </div>
+        <div id="studentAssignmentsList" class="assignments-list"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Оголошення викладача та розклад</h3>
+            <p>Актуальні повідомлення від Тетяни Гаркот та розклад групи К-41</p>
+          </div>
+          <span class="badge">Live-синхронізація</span>
+        </div>
+        <div id="studentAnnouncements" class="announcements-feed"></div>
+        <div class="student-schedule-box">
+          <h4>Розклад занять (Вебтехнології та вебдизайн)</h4>
+          <div class="schedule-mini-list">
+            <div><span class="sched-day">ПН · 2 пара</span><b>Лекція · ауд. 304</b><small>Тетяна Гаркот</small></div>
+            <div><span class="sched-day">СР · 3 пара</span><b>Практична робота · Лаб. ВТ-2</b><small>Підгрупа 1 та 2</small></div>
+            <div><span class="sched-day">ПТ · 15:00</span><b>Онлайн-консультація та захист робіт</b><small>Teacher Portal Pro</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:20px">
+      <div class="panel-heading">
+        <div>
+          <h3>Мої досягнення та навчальні нагороди</h3>
+          <p>Автоматично відкриваються на основі ваших оцінок, тренувань і зданих робіт</p>
+        </div>
+        <span class="badge">Гейміфікація навчання</span>
+      </div>
+      <div id="studentBadgesGrid" class="achievements-grid"></div>
+    </div>
+  </div>
+</section>
+
+<section id="view-admin" class="view">
+  <div class="container inner-page">
+    <nav class="teacher-subnav" aria-label="Навігація панелі викладача">
+      <button class="subnav-btn active" data-nav="admin"><svg class="icon icon-pulse"><use href="#i-shield"/></svg> Кабінет &amp; AI- Центр</button>
+      <button class="subnav-btn" data-nav="journal"><svg class="icon"><use href="#i-clipboard"/></svg> Електронний журнал</button>
+      <button class="subnav-btn" data-nav="records"><svg class="icon"><use href="#i-chart"/></svg> Підсумкова відомість</button>
+      <button class="subnav-btn" data-nav="documents"><svg class="icon"><use href="#i-file"/></svg> Плани та документи</button>
+      <button class="subnav-btn" data-nav="accounts"><svg class="icon"><use href="#i-users"/></svg> Облікові записи</button>
+      <button class="subnav-btn" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Додатково (Хмара)</button>
+      <button class="subnav-btn" id="subnavThemeBtn"><svg class="icon icon-spin-hover"><use href="#i-palette"/></svg> Теми (8)</button>
+    </nav>
+
+    <div class="app-titlebar">
+      <div>
+        <span class="section-tag"><svg class="icon icon-pulse"><use href="#i-shield"/></svg> МОДЕРНІЗОВАНА ПАНЕЛЬ ТА ОБЛІКОВИЙ ЗАПИС ВИКЛАДАЧА · v3.1 (build 211) RS4</span>
+        <h1 id="adminGreeting">Вітаємо в кабінеті викладача!</h1>
+        <p>Пошуковий ШІ-асистент Gemini &amp; ChatGPT, прослуховування голосових нотаток студентів, радарна аналітика та хмарна синхронізація.</p>
+      </div>
+      <div class="titlebar-btn-group">
+        <button class="btn outline small" id="adminQuickCloudSync"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Хмарна синхронізація</button>
+        <span class="role-badge admin-badge"><svg class="icon icon-pulse"><use href="#i-shield"/></svg> Викладач · Адмін v3.1 RS4</span>
+      </div>
+    </div>
+
+    <div class="admin-banner">
+      <div>
+        <span class="eyebrow">TEACHER PORTAL PRO v3.1 (build 211) RS4 / AI &amp; ADMIN WORKSPACE</span>
+        <h2>Штучний інтелект Gemini &amp; ChatGPT<br>на службі у викладача.</h2>
+        <p>Генеруйте завдання, тести й аналітичні звіти за секунди, слухайте голосові відповіді студентів і керуйте журналом із підсумками групи.</p>
+        <div class="mini-actions">
+          <button class="btn white" data-nav="journal"><svg class="icon"><use href="#i-clipboard"/></svg> Відкрити електронний журнал ↗</button>
+          <button class="btn glass" data-nav="records"><svg class="icon"><use href="#i-chart"/></svg> Підсумкова відомість</button>
+          <button class="btn glass" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Додатково (Хмарне сховище)</button>
+        </div>
+      </div>
+      <img src="assets/ai-assistant-world.svg" alt="Ілюстрація ШІ-асистента викладача">
+    </div>
+
+    <div class="stats-grid stats-grid-6" id="adminStats"></div>
+
+    <!-- НОВИЙ БЛОК У КАБІНЕТІ ВИКЛАДАЧА: ПОШУКОВИЙ ЗАПИТ ТА АСИСТЕНТ GEMINI / CHATGPT -->
+    <div class="panel teacher-ai-panel" style="margin-bottom:22px">
+      <div class="panel-heading">
+        <div>
+          <h3><svg class="icon icon-pulse"><use href="#i-sparkles"/></svg> Інтелектуальний пошуковий запит та генератор завдань (Gemini &amp; ChatGPT AI Hub)</h3>
+          <p>Виконуйте пошукові запити, генеруйте тести, практичні завдання, критерії оцінювання та рекомендації для покращення успішності групи К-41</p>
+        </div>
+        <div class="tab-pills" id="aiEngineSelector">
+          <button type="button" class="pill active" data-ai-engine="Gemini 2.5 Pro">✨ Google Gemini 2.5</button>
+          <button type="button" class="pill" data-ai-engine="ChatGPT-4o">🤖 OpenAI ChatGPT-4o</button>
+          <button type="button" class="pill" data-ai-engine="RS4 Neural Analyst">⚡ Аналітик журналу RS4</button>
+        </div>
+      </div>
+
+      <div class="ai-preset-chips">
+        <span>Швидкі запити:</span>
+        <button type="button" class="btn tiny subtle" data-ai-preset="test">📝 Скласти 5 тестових питань з вебтехнологій</button>
+        <button type="button" class="btn tiny subtle" data-ai-preset="analytics">📊 Проаналізувати поточні оцінки групи К-41</button>
+        <button type="button" class="btn tiny subtle" data-ai-preset="practice">💻 Створити нове практичне завдання з JS та DOM</button>
+        <button type="button" class="btn tiny subtle" data-ai-preset="plan">📋 Покращити методичний план лекції</button>
+        <button type="button" class="btn tiny subtle" data-ai-preset="motivation">📢 Написати оголошення для студентів із пропусками</button>
+      </div>
+
+      <form id="teacherAiForm" class="ai-search-form">
+        <div class="search-wrap">
+          <svg class="icon icon-pulse"><use href="#i-search"/></svg>
+          <input type="text" id="teacherAiQueryInput" placeholder="Введіть запит для Gemini або ChatGPT (напр. Розроби завдання для практичної №4 з CSS Grid та критерії на 12 балів)..." maxlength="350" required>
+        </div>
+        <button type="submit" class="btn primary"><svg class="icon icon-pulse"><use href="#i-sparkles"/></svg> Виконати ШІ-запит</button>
+        <button type="button" class="btn outline" id="openExternalGeminiBtn" title="Відкрити запит у Google Gemini">Gemini ↗</button>
+        <button type="button" class="btn outline" id="openExternalChatGptBtn" title="Відкрити запит у ChatGPT">ChatGPT ↗</button>
+      </form>
+
+      <div class="ai-output-card">
+        <div class="ai-output-head">
+          <span id="aiOutputStatus">✨ Результат роботи ШІ-асистента (Gemini 2.5 Pro)</span>
+          <div class="ai-output-actions">
+            <button type="button" class="btn tiny subtle" id="aiSaveToNotesBtn">📌 У нотатки викладача</button>
+            <button type="button" class="btn tiny subtle" id="aiPublishAnnBtn">📢 Опублікувати студентам</button>
+            <button type="button" class="btn tiny subtle" id="aiSaveDocBtn">📁 Зберегти як документ</button>
+          </div>
+        </div>
+        <div id="teacherAiResponseBox" class="ai-response-body"></div>
+      </div>
+    </div>
+
+    <!-- ПОКРАЩЕНИЙ ОБЛІКОВИЙ ЗАПИС ТА ОСОБИСТИЙ КАБІНЕТ ВИКЛАДАЧА -->
+    <div class="panel teacher-cabinet-panel" style="margin-bottom:22px">
+      <div class="panel-heading">
+        <div>
+          <h3>Обліковий запис та особистий кабінет викладача Pro</h3>
+          <p>Керування профілем викладача, перемикання ролей команди, таймер пари, виконання навантаження та методичні нотатки</p>
+        </div>
+        <div class="titlebar-btn-group">
+          <span class="badge" id="teacherAccountSyncBadge">☁️ Хмара: Активна</span>
+          <span class="badge">Teacher Account v3.1 RS4</span>
+        </div>
+      </div>
+
+      <div class="teacher-account-strip">
+        <div class="teacher-acc-select-wrap">
+          <span>Активний профіль кабінету викладача:</span>
+          <div class="teacher-persona-pills" id="teacherPersonaPills">
+            <button type="button" class="pill active" data-teacher-persona="Тетяна Гаркот|Викладач дисципліни «Вебтехнології та вебдизайн»|teacher.harkot">👩‍🏫 Тетяна Гаркот (Викладач)</button>
+            <button type="button" class="pill" data-teacher-persona="Максим Ковалишин|Автор і Головний Адміністратор порталу|admin.kovalyshyn">🛡️ Максим Ковалишин (Адмін)</button>
+            <button type="button" class="pill" data-teacher-persona="Христина Небещанська|Модератор платформи та контенту|moderator.khrystyna">✨ Христина Небещанська (Модератор)</button>
+          </div>
+        </div>
+        <div class="lesson-timer-widget" aria-label="Таймер навчальної пари">
+          <svg class="icon icon-pulse"><use href="#i-clock"/></svg>
+          <div>
+            <small>Таймер пари (80 хв)</small>
+            <strong id="lessonTimerDisplay">80:00</strong>
+          </div>
+          <button type="button" class="btn tiny primary" id="lessonTimerToggle">Старт</button>
+          <button type="button" class="btn tiny subtle" id="lessonTimerReset">↺</button>
+        </div>
+      </div>
+
+      <div class="teacher-cabinet-grid">
+        <div class="teacher-profile-box">
+          <div class="teacher-id-row">
+            <span class="teacher-big-avatar" id="teacherCardAvatar">ТГ</span>
+            <div>
+              <strong id="teacherCardName">Тетяна Гаркот</strong>
+              <small id="teacherCardTitle">Викладач дисципліни «Вебтехнології та вебдизайн»</small>
+              <span class="status-tag">✓ Верифікований обліковий запис · RS4</span>
+            </div>
+          </div>
+          <div class="teacher-meta-grid">
+            <div><small>Логін системи</small><b id="teacherCardLogin">teacher.harkot</b></div>
+            <div><small>Рівень доступу</small><b>Повний (AI/Write/Cloud)</b></div>
+            <div><small>Кураторська група</small><b>К-41 (Комп’ютерні науки)</b></div>
+            <div><small>Захист сесії</small><b>SHA-256 · Build 211</b></div>
+          </div>
+          <div class="workload-bars">
+            <div class="workload-item">
+              <div class="workload-label"><span>Лекційні години</span><b>18 / 24 год (75%)</b></div>
+              <div class="progress-track"><div class="progress-fill" style="width:75%"></div></div>
+            </div>
+            <div class="workload-item">
+              <div class="workload-label"><span>Практичні та лабораторні</span><b>22 / 30 год (73%)</b></div>
+              <div class="progress-track"><div class="progress-fill cyan" style="width:73%"></div></div>
+            </div>
+            <div class="workload-item">
+              <div class="workload-label"><span>Перевірка індивідуальних робіт</span><b id="teacherReviewProgressLabel">85% виконано</b></div>
+              <div class="progress-track"><div class="progress-fill green" id="teacherReviewProgressBar" style="width:85%"></div></div>
+            </div>
+          </div>
+          <div class="team-mini-credits">
+            <small>Автори: Адмін: <b>Максим Ковалишин</b> · Модератор: <b>Христина Небещанська</b> · Викладач: <b>Тетяна Гаркот</b></small>
+          </div>
+        </div>
+
+        <div class="teacher-organizer-box">
+          <h4><svg class="icon icon-bounce"><use href="#i-check"/></svg> Завдання викладача (Органайзер)</h4>
+          <form id="teacherTaskForm" class="inline-add-form">
+            <input type="text" id="teacherTaskInput" placeholder="Нове завдання (напр. Перевірити ПР №3)..." maxlength="120" required>
+            <button type="submit" class="btn small primary"><svg class="icon"><use href="#i-plus"/></svg></button>
+          </form>
+          <div id="teacherTodoList" class="teacher-todo-list"></div>
+          <div class="audit-log-mini">
+            <h5>Журнал активності облікового запису</h5>
+            <div id="teacherAuditLog" class="audit-log-items"></div>
+          </div>
+        </div>
+
+        <div class="teacher-notes-box">
+          <h4><svg class="icon icon-float"><use href="#i-file"/></svg> Швидкі методичні нотатки</h4>
+          <textarea id="teacherNotesArea" rows="5" placeholder="Запишіть важливі примітки до наступної пари або згенеруйте їх через ШІ-асистента вище..."></textarea>
+          <div class="notes-footer">
+            <small id="notesSavedStatus">Автозбереження у браузері</small>
+            <button type="button" class="btn tiny subtle" id="clearTeacherNotes">Очистити</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Взаємодія: Черга перевірки робіт + Вхідні голосові та нотатки студентів + Оголошення -->
+    <div class="two-columns" style="margin-bottom:22px">
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Роботи студентів та голосові повідомлення</h3>
+            <p>Здані практичні роботи й голосові/текстові конспекти від студентів</p>
+          </div>
+          <span class="badge" id="pendingReviewsBadge">0 очікують</span>
+        </div>
+        <div id="teacherSubmissionsQueue" class="submissions-queue"></div>
+        <h4 style="margin:18px 0 10px;font-size:14px;display:flex;align-items:center;gap:6px"><svg class="icon icon-bounce"><use href="#i-mic"/></svg> Останні голосові та нотатки студентів до дисциплін</h4>
+        <div id="teacherVoiceInbox" class="submissions-queue"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Оголошення та дедлайни для групи К-41</h3>
+            <p>Миттєво відображаються в особистому кабінеті кожного студента</p>
+          </div>
+          <span class="badge">Трансляція</span>
+        </div>
+        <form id="announcementForm" class="announcement-form">
+          <div class="form-grid">
+            <input type="text" id="annTitle" placeholder="Заголовок (напр. Захист Практичної №3)" maxlength="90" required>
+            <select id="annTag">
+              <option value="Дедлайн">🔥 Дедлайн</option>
+              <option value="Важливо">⚡ Важливо</option>
+              <option value="Інформація">📌 Інформація</option>
+            </select>
+          </div>
+          <div class="inline-add-form" style="margin-top:8px">
+            <input type="text" id="annBody" placeholder="Текст оголошення для студентів..." maxlength="220" required>
+            <button type="submit" class="btn small primary">Опублікувати</button>
+          </div>
+        </form>
+        <div id="adminAnnouncementsList" class="announcements-feed compact" style="margin-top:14px"></div>
+      </article>
+    </div>
+
+    <!-- РОЗШИРЕНІ ГРАФІКИ ТА НОВІ ДІАГРАМИ RS4 -->
+    <div class="chart-layout">
+      <article class="panel">
+        <div class="panel-heading">
+          <div><h3>Середній бал за видами занять</h3><p>Поточні результати групи К-41</p></div>
+          <span class="badge">Динамічні дані</span>
+        </div>
+        <div id="categoryChart" class="category-chart"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-heading">
+          <div><h3>Розподіл оцінок та якість знань</h3><p>За 12-бальною шкалою оцінювання</p></div>
+        </div>
+        <div id="donutChart" class="donut-layout"></div>
+      </article>
+    </div>
+
+    <!-- НОВИЙ РЯД ГРАФІКІВ RS4: РАДАРНА ДІАГРАМА КОМПЕТЕНТНОСТЕЙ ТА ГІСТОГРАМА ЄКТС -->
+    <div class="chart-layout">
+      <article class="panel">
+        <div class="panel-heading">
+          <div><h3>Радарна матриця компетентностей групи К-41</h3><p>Багатовимірний аналіз теорії, практики, контролю, активності та якості</p></div>
+          <span class="badge">Новий графік RS4</span>
+        </div>
+        <div id="radarChart" class="radar-chart-box"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-heading">
+          <div><h3>Гістограма розподілу студентів за ЄКТС (A–FX)</h3><p>Європейська кредитно-трансферна система та прогноз стипендії</p></div>
+          <span class="badge">Статистика ЄКТС</span>
+        </div>
+        <div id="ectsChart" class="ects-chart-box"></div>
+      </article>
+    </div>
+
+    <div class="chart-layout lower-chart">
+      <article class="panel">
+        <div class="panel-heading">
+          <div><h3>Динаміка середнього бала</h3><p>Послідовність проведених занять (Л1–К2)</p></div>
+          <span class="badge">Тренд успішності</span>
+        </div>
+        <div id="trendChart" class="trend-chart"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-heading">
+          <div><h3>Рейтинг лідерів та контроль успішності</h3><p>Топ студентів групи К-41 та ті, хто потребує уваги</p></div>
+        </div>
+        <div id="adminLeaderboard" class="leaderboard-box"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="view-journal" class="view">
+  <div class="container inner-page">
+    <nav class="teacher-subnav" aria-label="Навігація панелі викладача">
+      <button class="subnav-btn" data-nav="admin"><svg class="icon"><use href="#i-shield"/></svg> Кабінет &amp; AI-Центр</button>
+      <button class="subnav-btn active" data-nav="journal"><svg class="icon icon-pulse"><use href="#i-clipboard"/></svg> Електронний журнал</button>
+      <button class="subnav-btn" data-nav="records"><svg class="icon"><use href="#i-chart"/></svg> Підсумкова відомість</button>
+      <button class="subnav-btn" data-nav="documents"><svg class="icon"><use href="#i-file"/></svg> Плани та документи</button>
+      <button class="subnav-btn" data-nav="accounts"><svg class="icon"><use href="#i-users"/></svg> Облікові записи</button>
+      <button class="subnav-btn" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Додатково (Хмара)</button>
+    </nav>
+    <div class="app-titlebar">
+      <div>
+        <span class="section-tag"><svg class="icon icon-pulse"><use href="#i-clipboard"/></svg> ЖУРНАЛ ВИКЛАДАЧА · МАКСИМАЛЬНА ТАБЛИЦЯ v3.1 RS4</span>
+        <h1>Електронний журнал</h1>
+        <p>Оцінки за лекції, практичні та контрольні з індикатором тренду, конспектами, прогресом, ЄКТС і дворядковим підсумком групи.</p>
+      </div>
+      <div class="titlebar-btn-group">
+        <button class="btn outline" id="journalCloudSyncBtn"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Синхронізувати в хмару</button>
+        <button class="btn outline" id="fillMissingGrades" title="Заповнити пропуски тестовими оцінками"><svg class="icon icon-pulse"><use href="#i-bolt"/></svg> Заповнити пропуски</button>
+        <button class="btn primary" id="exportJournal"><svg class="icon"><use href="#i-download"/></svg> Експорт CSV</button>
+      </div>
+    </div>
+    <div class="panel journal-toolbar">
+      <div class="field"><label for="journalGroup">Навчальна група</label><select id="journalGroup"><option value="К-41">К-41 · Комп'ютерні науки</option></select></div>
+      <div class="field"><label for="journalCategory">Вид занять</label><select id="journalCategory"><option value="all">Усі типи оцінок</option><option value="lecture">Лекції</option><option value="practice">Практичні</option><option value="control">Контрольні</option></select></div>
+      <div class="field"><label for="journalSort">Сортування списку</label><select id="journalSort"><option value="default">За номером у списку</option><option value="name">За прізвищем (А–Я)</option><option value="desc">За балом (від найвищого)</option><option value="asc">За балом (від найнижчого)</option></select></div>
+      <div class="field"><label for="journalSearch">Пошук студента</label><input id="journalSearch" type="search" placeholder="Прізвище або ім’я"></div>
+      <div class="journal-tools">
+        <button class="btn outline" id="addStudent"><svg class="icon"><use href="#i-plus"/></svg> Студент</button>
+        <button class="btn subtle" id="resetGrades">Демо-дані</button>
+      </div>
+    </div>
+    <div class="stats-grid" id="journalStats"></div>
+    <div class="panel journal-panel">
+      <div class="panel-heading">
+        <div>
+          <h3>Журнал оцінювання · К-41 (v3.1 RS4)</h3>
+          <p>Натисніть на ім'я студента для перегляду досьє. Дворядковий підвал таблиці показує середній бал і якість знань (%) за кожним заняттям.</p>
+        </div>
+        <div class="tab-pills" id="journalLevelPills">
+          <button type="button" class="pill active" data-journal-level="all">Усі</button>
+          <button type="button" class="pill" data-journal-level="high">Відмінники (10–12)</button>
+          <button type="button" class="pill" data-journal-level="good">Достатній (7–9)</button>
+          <button type="button" class="pill" data-journal-level="low">Увага (&lt;7)</button>
+          <button type="button" class="pill" data-journal-level="missing">З пропусками</button>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="grades-table" id="gradeTable">
+          <thead id="gradeHead"></thead>
+          <tbody id="gradeBody"></tbody>
+          <tfoot id="gradeFoot"></tfoot>
+        </table>
+      </div>
+      <div class="table-caption">↔ Кольорова індикація: зелений (10–12), блакитний (7–9), бурштиновий (4–6), кораловий (1–3). Підтримується навігація стрілками ↑↓←→.</div>
+    </div>
+  </div>
+</section>
+
+<section id="view-records" class="view">
+  <div class="container inner-page">
+    <nav class="teacher-subnav" aria-label="Навігація панелі викладача">
+      <button class="subnav-btn" data-nav="admin"><svg class="icon"><use href="#i-shield"/></svg> Кабінет &amp; AI-Центр</button>
+      <button class="subnav-btn" data-nav="journal"><svg class="icon"><use href="#i-clipboard"/></svg> Електронний журнал</button>
+      <button class="subnav-btn active" data-nav="records"><svg class="icon icon-pulse"><use href="#i-chart"/></svg> Підсумкова відомість</button>
+      <button class="subnav-btn" data-nav="documents"><svg class="icon"><use href="#i-file"/></svg> Плани та документи</button>
+      <button class="subnav-btn" data-nav="accounts"><svg class="icon"><use href="#i-users"/></svg> Облікові записи</button>
+      <button class="subnav-btn" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Додатково (Хмара)</button>
+    </nav>
+    <div class="app-titlebar">
+      <div><span class="section-tag"><svg class="icon icon-bounce"><use href="#i-chart"/></svg> ЗВІТНІСТЬ · v3.1 (build 211) RS4</span><h1>Підсумкова відомість</h1><p>Автоматичне зведення лекцій, практичних, контрольних, прогресу заповнення, тренду, ЄКТС та стипендіального статусу.</p></div>
+      <div class="titlebar-btn-group">
+        <button class="btn outline" id="printRecords">🖨 Друк відомості</button>
+        <button class="btn primary" id="exportRecords"><svg class="icon"><use href="#i-download"/></svg> Експорт відомості CSV</button>
+      </div>
+    </div>
+    <div class="stats-grid" id="recordStats"></div>
+    <div class="panel">
+      <div class="panel-heading"><h3>Зведена таблиця успішності групи К-41</h3><span class="badge">Поточний семестр · v3.1 (build 211) RS4</span></div>
+      <div class="table-scroll">
+        <table class="grades-table">
+          <thead>
+            <tr><th>№</th><th>Студент</th><th>Лекції</th><th>Практичні</th><th>Контрольні</th><th>Тренд</th><th>Виконання</th><th>Середній</th><th>Підсумкова</th><th>ЄКТС</th><th>Рівень / Статус</th></tr>
+          </thead>
+          <tbody id="recordsBody"></tbody>
+          <tfoot id="recordsFoot"></tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="view-documents" class="view">
+  <div class="container inner-page">
+    <nav class="teacher-subnav" id="docsTeacherNav" aria-label="Навігація панелі викладача">
+      <button class="subnav-btn" data-nav="admin"><svg class="icon"><use href="#i-shield"/></svg> Кабінет &amp; AI-Центр</button>
+      <button class="subnav-btn" data-nav="journal"><svg class="icon"><use href="#i-clipboard"/></svg> Електронний журнал</button>
+      <button class="subnav-btn" data-nav="records"><svg class="icon"><use href="#i-chart"/></svg> Підсумкова відомість</button>
+      <button class="subnav-btn active" data-nav="documents"><svg class="icon icon-pulse"><use href="#i-file"/></svg> Плани та документи</button>
+      <button class="subnav-btn" data-nav="accounts"><svg class="icon"><use href="#i-users"/></svg> Облікові записи</button>
+      <button class="subnav-btn" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Додатково (Хмара)</button>
+    </nav>
+    <div class="page-banner docs-banner"><div><span class="section-tag">НАВЧАЛЬНА ДОКУМЕНТАЦІЯ</span><h1>Плани та документи</h1><p>Навчальні програми, робочі плани дисциплін, індивідуальний план викладача Тетяни Гаркот та матеріали, згенеровані ШІ.</p></div><img src="assets/classroom-world.svg" alt="Документи навчального процесу"></div>
+    <div class="panel filter-panel">
+      <div class="search-wrap"><svg class="icon"><use href="#i-search"/></svg><input id="documentSearch" type="search" placeholder="Шукати документ..."></div>
+      <div class="tab-pills" id="documentTabs"><button class="pill active" data-doc-filter="all">Усі</button><button class="pill" data-doc-filter="plan">Плани</button><button class="pill" data-doc-filter="norm">Нормативні</button></div>
+      <button class="btn primary hidden" id="newDocument"><svg class="icon"><use href="#i-plus"/></svg> Додати план</button>
+    </div>
+    <div id="documentsList" class="document-list"></div>
+    <div class="disclaimer"><svg class="icon"><use href="#i-info"/></svg> Усі документи — демонстраційні зразки, а не затверджена документація коледжу.</div>
+  </div>
+</section>
+
+<section id="view-accounts" class="view">
+  <div class="container inner-page">
+    <nav class="teacher-subnav" aria-label="Навігація панелі викладача">
+      <button class="subnav-btn" data-nav="admin"><svg class="icon"><use href="#i-shield"/></svg> Кабінет &amp; AI-Центр</button>
+      <button class="subnav-btn" data-nav="journal"><svg class="icon"><use href="#i-clipboard"/></svg> Електронний журнал</button>
+      <button class="subnav-btn" data-nav="records"><svg class="icon"><use href="#i-chart"/></svg> Підсумкова відомість</button>
+      <button class="subnav-btn" data-nav="documents"><svg class="icon"><use href="#i-file"/></svg> Плани та документи</button>
+      <button class="subnav-btn active" data-nav="accounts"><svg class="icon icon-pulse"><use href="#i-users"/></svg> Облікові записи</button>
+      <button class="subnav-btn" data-nav="khrystyna"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Додатково (Хмара)</button>
+    </nav>
+    <div class="app-titlebar"><div><span class="section-tag"><svg class="icon icon-pulse"><use href="#i-key"/></svg> КЕРУВАННЯ ОБЛІКОВИМИ ЗАПИСАМИ · v3.1 RS4</span><h1>Облікові записи викладача, адміністратора та студентів</h1><p>Системні профілі для автоматичної авторизації («Викладач» / «Студент») та локально зареєстровані облікові записи.</p></div><span class="role-badge admin-badge">Тільки викладач</span></div>
+    <div class="panel"><div class="panel-heading"><div><h3>Зареєстровані та системні облікові записи</h3><p>Натисніть «Авто-вхід» біля потрібного облікового запису для миттєвого перемикання сесії.</p></div><span class="badge">SHA-256 · RBAC</span></div><div id="accountList" class="accounts-grid"></div></div>
+  </div>
+</section>
+
+<!-- ПОСИЛЕНИЙ І СТИЛІЗОВАНИЙ РОЗДІЛ «ДОДАТКОВО» v3.1 (build 211) RS4 -->
+<section id="view-khrystyna" class="view">
+  <div class="container inner-page">
+    <div class="page-banner khrystyna-banner">
+      <div>
+        <span class="section-tag"><svg class="icon icon-float"><use href="#i-cloud"/></svg> ДОДАТКОВО · ХМАРНА ІНЖЕНЕРІЯ ТА АНАЛІТИКА · v3.1 (build 211) RS4</span>
+        <h1>Інтегрування електронного журналу, оцінок та статистики в хмарне сховище</h1>
+        <p>Повномасштабний інженерно-методичний центр релізу <b>RS4</b>: живий симулятор хмарної синхронізації, калькулятор обсягу хмарної БД закладу, порівняльна матриця архітектур, графік затримки реплікації та авторський футер модератора <b>Христини Небещанської</b>.</p>
+        <div class="hero-buttons" style="margin-top:18px">
+          <button class="btn primary" id="runCloudSyncBtn"><svg class="icon icon-spin-hover"><use href="#i-sync"/></svg> Синхронізувати журнал у хмару зараз</button>
+          <a class="btn glass" href="khrystyna.html">Окрема сторінка «Додатково» (HTML) ↗</a>
+          <button class="btn outline" data-nav="home">← На головну</button>
+        </div>
+      </div>
+      <img src="assets/cloud-sync-world.svg" alt="Ілюстрація хмарного сховища електронного журналу">
+    </div>
+
+    <!-- ЖИВИЙ СИМУЛЯТОР ХМАРНОГО СХОВИЩА ОЦІНОК ТА СТАТИСТИКИ -->
+    <div class="panel cloud-simulator-panel" style="margin-bottom:24px">
+      <div class="panel-heading">
+        <div>
+          <h3><svg class="icon icon-float"><use href="#i-cloud"/></svg> Живий центр хмарної синхронізації оцінок та статистики (Cloud Engine v3.1 RS4)</h3>
+          <p>Перевірте у реальному часі, як оцінки, голосові нотатки та статистика групи К-41 пакуються у криптографічно захищений хмарний знімок</p>
+        </div>
+        <span class="badge" id="cloudSyncStatusBadge">☁️ Готово до синхронізації</span>
+      </div>
+
+      <div class="cloud-pipeline-steps">
+        <div class="pipe-step" id="pipeStep1">
+          <span class="pipe-ico"><svg class="icon icon-bounce"><use href="#i-clipboard"/></svg></span>
+          <div><b>1. Збір оцінок та конспектів</b><small>Журнал К-41 + голосові метадані</small></div>
+        </div>
+        <div class="pipe-arrow">➔</div>
+        <div class="pipe-step" id="pipeStep2">
+          <span class="pipe-ico"><svg class="icon icon-pulse"><use href="#i-chart"/></svg></span>
+          <div><b>2. Агрегація статистики</b><small>Середній бал, медіана, ЄКТС, тренди</small></div>
+        </div>
+        <div class="pipe-arrow">➔</div>
+        <div class="pipe-step" id="pipeStep3">
+          <span class="pipe-ico"><svg class="icon icon-spin-hover"><use href="#i-lock"/></svg></span>
+          <div><b>3. Підпис SHA-256 &amp; TLS 1.3</b><small>Перевірка цілісності пакета</small></div>
+        </div>
+        <div class="pipe-arrow">➔</div>
+        <div class="pipe-step" id="pipeStep4">
+          <span class="pipe-ico"><svg class="icon icon-float"><use href="#i-cloud"/></svg></span>
+          <div><b>4. Реплікація в Cloud DB</b><small>Миттєва роздача в кабінети</small></div>
+        </div>
+      </div>
+
+      <div class="progress-track" style="height:10px;margin:16px 0">
+        <div class="progress-fill cyan" id="cloudSyncProgressBar" style="width:100%"></div>
+      </div>
+
+      <div class="two-columns" style="align-items:stretch">
+        <div class="cloud-stats-summary">
+          <h4>Поточна хмарна телеметрія журналу К-41</h4>
+          <div class="table-scroll">
+            <table class="grades-table cloud-metrics-table">
+              <thead>
+                <tr><th>Параметр хмарного пакета</th><th>Значення</th><th>Статус</th></tr>
+              </thead>
+              <tbody id="cloudTelemetryTable"></tbody>
+            </table>
+          </div>
+          <div class="hero-buttons" style="margin-top:14px">
+            <button class="btn small primary" id="triggerCloudSyncBtn"><svg class="icon icon-spin-hover"><use href="#i-sync"/></svg> Оновити хмарний знімок</button>
+            <button class="btn small outline" id="downloadCloudJsonBtn"><svg class="icon"><use href="#i-download"/></svg> Завантажити Cloud JSON</button>
+          </div>
+        </div>
+        <div class="cloud-json-box">
+          <div class="cloud-json-head">
+            <span><svg class="icon"><use href="#i-code"/></svg> Структура хмарного пакета (`cloud_journal_v3.1_rs4.json`)</span>
+            <small id="cloudLastSyncTime">Синхронізовано</small>
+          </div>
+          <pre id="cloudJsonPreview" class="cloud-json-pre"></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- НОВІ ФІШКИ В «ДОДАТКОВО»: КАЛЬКУЛЯТОР ХМАРНОГО СХОВИЩА ТА ГРАФІК ШВИДКОДІЇ -->
+    <div class="two-columns" style="margin-bottom:24px">
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3><svg class="icon icon-pulse"><use href="#i-database"/></svg> Калькулятор ємності хмарного сховища коледжу</h3>
+            <p>Розрахуйте необхідний обсяг хмарної БД для зберігання оцінок, статистики та голосових нотаток</p>
+          </div>
+          <span class="badge">Інженерний розрахунок</span>
+        </div>
+        <div class="simulator-box">
+          <div class="form-field">
+            <label for="cloudCalcStudents">Кількість студентів у закладі: <strong id="cloudCalcStudentsVal">450</strong> осіб</label>
+            <input type="range" id="cloudCalcStudents" min="50" max="2000" step="50" value="450" class="range-slider">
+          </div>
+          <div class="form-field">
+            <label for="cloudCalcSemesters">Період архівного зберігання: <strong id="cloudCalcSemestersVal">8</strong> семестрів (4 роки)</label>
+            <input type="range" id="cloudCalcSemesters" min="1" max="12" step="1" value="8" class="range-slider">
+          </div>
+          <div id="cloudCalcResultBox" class="sim-result-box"></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3><svg class="icon icon-bounce"><use href="#i-chart"/></svg> Пропускна здатність та затримка хмарних вузлів (Latency ms)</h3>
+            <p>Моніторинг швидкості обміну пакетами оцінок між клієнтом та хмарним сервером</p>
+          </div>
+          <span class="badge">Edge Telemetry</span>
+        </div>
+        <div id="cloudLatencyChart" class="trend-chart"></div>
+      </article>
+    </div>
+
+    <!-- ПОРІВНЯЛЬНА ТАБЛИЦЯ АРХІТЕКТУР ЗБЕРІГАННЯ ДАНИХ -->
+    <div class="panel" style="margin-bottom:24px">
+      <div class="panel-heading">
+        <div>
+          <h3><svg class="icon icon-float"><use href="#i-clipboard"/></svg> Порівняльна таблиця архітектур електронного журналу</h3>
+          <p>Чому гібридна хмарна інтеграція RS4 переважає класичне локальне збереження</p>
+        </div>
+        <span class="badge">Порівняльний аналіз</span>
+      </div>
+      <div class="table-scroll">
+        <table class="grades-table">
+          <thead>
+            <tr>
+              <th>Критерій / Можливість</th>
+              <th>Локальний прототип (LocalStorage)</th>
+              <th>Звичайна клієнт-серверна БД</th>
+              <th>Гібридна хмарна архітектура RS4 (Offline-First + Cloud)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Доступ із різних пристроїв</b></td>
+              <td><span class="score-pill low">Тільки 1 браузер</span></td>
+              <td><span class="score-pill medium">Так (за наявності мережі)</span></td>
+              <td><span class="score-pill">Миттєва мультиплатформна синхронізація</span></td>
+            </tr>
+            <tr>
+              <td><b>Робота без інтернету (Офлайн)</b></td>
+              <td><span class="score-pill">Працює</span></td>
+              <td><span class="score-pill low">Блокується</span></td>
+              <td><span class="score-pill">Повна робота + авто-реплікація при з'єднанні</span></td>
+            </tr>
+            <tr>
+              <td><b>Обчислення статистики та ЄКТС</b></td>
+              <td><span class="score-pill medium">Лише на клієнті</span></td>
+              <td><span class="score-pill medium">Серверні SQL-запити</span></td>
+              <td><span class="score-pill">Edge-агрегація у реальному часі + кеш</span></td>
+            </tr>
+            <tr>
+              <td><b>Підтримка голосових і конспектів</b></td>
+              <td><span class="score-pill low">Обмежено (~5 МБ)</span></td>
+              <td><span class="score-pill medium">Файлове сховище</span></td>
+              <td><span class="score-pill">Хмарний Object Storage (S3/Cloud) + CDN</span></td>
+            </tr>
+            <tr>
+              <td><b>Криптографічний контроль змін</b></td>
+              <td><span class="score-pill low">Відсутній</span></td>
+              <td><span class="score-pill medium">Базові логи</span></td>
+              <td><span class="score-pill">Хешування SHA-256 кожного знімка + Audit Trail</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- РОЗШИРЕНА СТАТТЯ ПРО ІНТЕГРУВАННЯ ЕЛЕКТРОННОГО ЖУРНАЛУ В ХМАРНЕ СХОВИЩЕ -->
+    <article class="panel article-panel" style="margin-bottom:24px">
+      <div class="panel-heading">
+        <div>
+          <span class="section-tag"><svg class="icon icon-pulse"><use href="#i-book"/></svg> ФУНДАМЕНТАЛЬНА СТАТТЯ · ДОДАТКОВО v3.1 RS4</span>
+          <h2 style="margin:6px 0 0;font-size:26px">Інтегрування електронного журналу, оцінок, голосових нотаток та статистики в хмарне сховище</h2>
+        </div>
+        <span class="badge">Архітектура v3.1 RS4</span>
+      </div>
+
+      <div class="article-grid">
+        <div class="article-block">
+          <h3><svg class="icon icon-float"><use href="#i-cloud"/></svg> 1. Перехід від локального зберігання до хмарної БД</h3>
+          <p>У базових навчальних прототипах оцінки зберігаються у локальному сховищі браузера (<code>localStorage</code>). Проте для повноцінної роботи освітнього закладу необхідна <b>хмарна синхронізація (Cloud Storage &amp; Realtime Database)</b>. При інтеграції електронного журналу у хмару кожна виставлена викладачем оцінка миттєво передається через захищений REST/GraphQL або WebSocket-канал до централізованого сховища (PostgreSQL / Supabase, Firebase Cloud Firestore або AWS Aurora).</p>
+          <p>Завдяки цьому студент бачить оновлений бал, голосовий коментар викладача і перерахований рейтинг у своєму особистому кабінеті зі смартфона чи ноутбука вже за частки секунди після збереження у журналі викладача.</p>
+        </div>
+
+        <div class="article-block">
+          <h3><svg class="icon icon-bounce"><use href="#i-database"/></svg> 2. Хмарна агрегація оцінок, медіани та статистики</h3>
+          <p>Хмарне сховище відповідає не лише за збереження клітинок таблиці, а й за <b>автоматичне обчислення аналітичних метрик на стороні сервера (Edge Functions)</b>:</p>
+          <ul>
+            <li><b>Середній бал та медіана за категоріями:</b> окремий розрахунок середніх показників за лекції (Л1–Л3), практичні (П1–П3) та контрольні роботи (К1–К2).</li>
+            <li><b>Якість знань та абсолютна успішність:</b> автоматичне визначення частки оцінок високого (10–12 б.) та достатнього (7–9 б.) рівнів, конвертація у шкалу ЄКТС (<code>A, B, C, D, E, FX</code>) та побудова радарної матриці компетентностей.</li>
+            <li><b>Мультимедійні конспекти та голосові:</b> аудіозаписи студентів зберігаються у хмарному об'єктному сховищі (Cloud Blob Storage), а в таблицю журналу записується лише компактне мета-посилання.</li>
+          </ul>
+        </div>
+
+        <div class="article-block">
+          <h3><svg class="icon icon-pulse"><use href="#i-shield"/></svg> 3. Кібербезпека, ролі (RBAC) та резервні копії</h3>
+          <p>При хмарній інтеграції розмежування прав доступу між ролями <b>«Викладач»</b>, <b>«Адміністратор»</b>, <b>«Модератор»</b> та <b>«Студент»</b> виконується на рівні серверних токенів авторизації (JWT / OAuth 2.0) і правил безпеки бази даних (Row-Level Security):</p>
+          <ul>
+            <li><b>Студент</b> має право читання (<code>SELECT</code>) виключно власних оцінок, рейтингу та публічних оголошень курсу, а також право надсилати практичні роботи, текстові конспекти й голосові нотатки.</li>
+            <li><b>Викладач та Адміністратор</b> мають верифіковане право запису (<code>INSERT / UPDATE</code>) у таблицю оцінок, використання ШІ-генератора завдань і формування зведеної відомості.</li>
+            <li><b>Автоматичний бекап:</b> хмарне сховище щодня формує незмінні знімки журналу (Snapshots) із перевіркою контрольної суми <code>SHA-256</code>.</li>
+          </ul>
+        </div>
+
+        <div class="article-block">
+          <h3><svg class="icon icon-spin-hover"><use href="#i-sync"/></svg> 4. Інтеграція ШІ-асистентів (Gemini / ChatGPT) із хмарним журналом</h3>
+          <p>У релізі <b>v3.1 (build 211) RS4</b> хмарна статистика групи агрегується у знеособлений аналітичний вектор, який подається до ШІ-моделі (Google Gemini або OpenAI ChatGPT). Це дозволяє автоматично виявляти теми, які викликали найбільше труднощів у студентів, і миттєво генерувати додаткові тренувальні тести та індивідуальні рекомендації.</p>
+          <div class="article-Callout">
+            <svg class="icon icon-pulse"><use href="#i-sparkles"/></svg>
+            <span>Матеріал підготовлено в межах посиленого релізу <b>v3.1 (build 211) RS4</b>. Куратор розділу та модератор: <b>Христина Небещанська</b>. Головний автор порталу: <b>Максим Ковалишин</b>.</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Персональний блок-футер Христини на окремій сторінці «Додатково» -->
+    <div class="panel khrystyna-dedicated-footer">
+      <div class="khrystyna-footer-head">
+        <span class="section-tag"><svg class="icon icon-pulse"><use href="#i-award"/></svg> ІМЕННИЙ АВТОРСЬКИЙ ФУТЕР РОЗДІЛУ «ДОДАТКОВО» · v3.1 (build 211) RS4</span>
+        <h3>Футер Христини Небещанської · Авторські права та команда</h3>
+      </div>
+      <div class="footer-grid khrystyna-footer-grid">
+        <div class="footer-brand">
+          <img src="assets/college-emblem.svg" alt="Стилізована емблема коледжу">
+          <div>
+            <strong>Teacher Portal Pro <span>v3.1 (build 211) RS4</span></strong>
+            <small>Розділ «Додатково» · Модератор: <b>Христина Небещанська</b></small>
+            <small>ВСП «Стрийський фаховий коледж ЛНУП»</small>
+          </div>
+        </div>
+        <div>
+          <span class="footer-label">АВТОРИ ТА РОЛІ</span>
+          <b>Автори:</b>
+          <b>Адмін: Максим Ковалишин</b>
+          <b>Модератор: Христина Небещанська</b>
+          <b>Викладач: Тетяна Гаркот</b>
+        </div>
+        <div>
+          <span class="footer-label">МОДЕРАТОР СТОРІНКИ</span>
+          <b>Христина Небещанська</b>
+          <small>Куратор статті про хмарне сховище та UI/UX модерації</small>
+          <small>На головній і в загальному — Автор: Максим Ковалишин</small>
+        </div>
+        <div>
+          <span class="footer-label">НАВІГАЦІЯ ТА COPYRIGHT</span>
+          <button class="inline-link" data-nav="home">← На головну (Автор: Максим Ковалишин)</button>
+          <a href="khrystyna.html">Окрема сторінка khrystyna.html ↗</a>
+          <small>© 2026 Усі права захищено · v3.1 (build 211) RS4</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="view-about" class="view">
+  <div class="container inner-page">
+    <div class="page-banner about-banner">
+      <div>
+        <span class="section-tag"><svg class="icon icon-pulse"><use href="#i-info"/></svg> ПРО НАВЧАЛЬНИЙ ПРОЄКТ · v3.1 (build 211) RS4</span>
+        <h1>Teacher Portal Pro</h1>
+        <p>Посилена освітня платформа версії <b>v3.1 (build 211) RS4</b> з інтеграцією ШІ-запитів Gemini/ChatGPT, голосовими нотатками, тренажером студента, хмарною синхронізацією журналу та 8 темами із зображеннями.</p>
+      </div>
+      <img src="assets/learning-world.svg" alt="Ілюстрація Teacher Portal Pro">
+    </div>
+    <div class="about-grid">
+      <article class="panel">
+        <h3>Автори, авторські права та команда розробників</h3>
+        <div class="person-row"><span>МК</span><div><b>Адмін: Максим Ковалишин</b><small>Автор проєкту (на головній сторінці і в загальному) · Системна архітектура</small></div></div>
+        <div class="person-row"><span>ХН</span><div><b>Модератор: Христина Небещанська</b><small>Модератор проєкту · <button type="button" class="inline-link" data-nav="khrystyna">Відкрити розділ «Додатково» (Хмарний журнал + Футер Христини)</button></small></div></div>
+        <div class="person-row"><span>ТГ</span><div><b>Викладач: Тетяна Гаркот</b><small>Викладач дисципліни та методичний керівник</small></div></div>
+      </article>
+      <article class="panel">
+        <h3>Навчальний заклад та реліз</h3>
+        <div class="college-info">
+          <img src="assets/college-emblem.svg" alt="Стилізована емблема закладу">
+          <div>
+            <b>ВСП «Стрийський фаховий коледж ЛНУП»</b>
+            <p>м. Стрий, Львівська область · Версія платформи: <b>v3.1 (build 211) RS4</b></p>
+            <a href="https://sclnau.com.ua/" target="_blank" rel="noopener noreferrer">Офіційний сайт коледжу ↗</a>
+          </div>
+        </div>
+        <p class="about-note">Емблема у цьому макеті — локальна художня стилізація. Посилання на зразок герба із зовнішнього довідника наведено в README.</p>
+      </article>
+    </div>
+    <div class="panel privacy-panel">
+      <h3>Авторські права та політика конфіденційності демонстраційної версії</h3>
+      <p>© 2026 <b>Teacher Portal Pro v3.1 (build 211) RS4</b>. Автор на головній сторінці та в загальному: <b>Максим Ковалишин</b>. Автори команди: Адмін — <b>Максим Ковалишин</b>, Модератор — <b>Христина Небещанська</b>, Викладач — <b>Тетяна Гаркот</b>.</p>
+      <p>Це локальний навчальний прототип із симулятором хмарного сховища, ШІ-асистентом та голосовими нотатками. Реєстраційні профілі, оцінки, нотатки й плани зберігаються у <b>localStorage цього браузера</b>.</p>
+      <div class="hero-buttons">
+        <button class="btn primary" id="aboutOpenCopyrightBtn"><svg class="icon"><use href="#i-award"/></svg> Ліцензія та авторські права</button>
+        <button class="btn outline" id="clearDemoData">Очистити локальні дані</button>
+        <a class="btn ghost" href="khrystyna.html">Окрема сторінка «Додатково» (khrystyna.html) ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer" id="siteFooter">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/college-emblem.svg" alt="Стилізована емблема коледжу">
+      <div>
+        <strong>Teacher Portal Pro <span>v3.1 (build 211) RS4</span></strong>
+        <small>ВСП «Стрийський фаховий коледж ЛНУП»</small>
+        <small id="footerPrimaryCredit" class="footer-primary-credit">Автор: Максим Ковалишин</small>
+      </div>
+    </div>
+    <div>
+      <span class="footer-label">АВТОРИ</span>
+      <b>Автори:</b>
+      <b>Адмін: Максим Ковалишин</b>
+      <b>Модератор: Христина Небещанська</b>
+      <b>Викладач: Тетяна Гаркот</b>
+    </div>
+    <div>
+      <span class="footer-label" id="footerPageLabel">ГОЛОВНА ТА В ЗАГАЛЬНОМУ</span>
+      <b id="footerRoleHighlight">Автор: Максим Ковалишин</b>
+      <button type="button" class="footer-link-btn" data-nav="khrystyna">☁️ Додатково (Хмарний журнал + Футер Христини) →</button>
+      <a href="khrystyna.html">Окрема сторінка «Додатково» (HTML) ↗</a>
+      <a href="https://sclnau.com.ua/" target="_blank" rel="noopener noreferrer">sclnau.com.ua ↗</a>
+    </div>
+    <div>
+      <span class="footer-label">ПЛАТФОРМА ТА ПРАВА · RS4</span>
+      <button type="button" id="openCopyrightModal">📜 Авторські права та ліцензія</button>
+      <button type="button" data-nav="about">🔒 Політика конфіденційності</button>
+      <button type="button" id="footerThemeBtn">🎨 Галерея тем із зображеннями (8)</button>
+      <small>Реліз: v3.1 (build 211) RS4</small>
+    </div>
+  </div>
+  <div class="container footer-bottom-bar">
+    <div class="copyright-line">
+      <span>© 2026 <b>Teacher Portal Pro v3.1 (build 211) RS4</b> · Автор: <b>Максим Ковалишин</b> (Адмін: Максим Ковалишин, Модератор: Христина Небещанська, Викладач: Тетяна Гаркот). Усі авторські права захищено.</span>
+    </div>
+    <div class="footer-tech-badges">
+      <span class="tech-pill"><svg class="icon icon-pulse"><use href="#i-sparkles"/></svg> Gemini &amp; ChatGPT AI</span>
+      <span class="tech-pill"><svg class="icon icon-bounce"><use href="#i-mic"/></svg> Voice Notes RS4</span>
+      <span class="tech-pill"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Cloud Sync RS4</span>
+      <span class="tech-pill"><svg class="icon icon-spin-hover"><use href="#i-palette"/></svg> 8 HD Themes</span>
+    </div>
+  </div>
+</footer>
+
+<div id="modalOverlay" class="modal-overlay hidden" role="presentation">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div class="modal-top">
+      <div>
+        <span class="section-tag" id="modalTag">TEACHER PORTAL PRO · v3.1 (build 211) RS4</span>
+        <h2 id="modalTitle">Вхід до системи</h2>
+      </div>
+      <button id="modalClose" class="icon-button" aria-label="Закрити вікно"><svg class="icon"><use href="#i-x"/></svg></button>
+    </div>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+</body>
+</html>

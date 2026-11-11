@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081b38">
+  <meta name="description" content="Додатково: Інтеграція електронного журналу, оцінок, голосових нотаток та статистики в хмарне сховище · Футер Христини Небещанської — Teacher Portal Pro v3.1 (build 211) RS4.">
+  <title>Додатково · Хмарна інтеграція журналу — Teacher Portal Pro v3.1 (build 211) RS4</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="aurora" data-banner-art="on" data-glow="on">
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 6-4 9-9 10-5-1-9-4-9-10V6zM9 12l2 2 4-4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6C8.7 4 5.7 4 2 5v15c3.7-1 6.7-1 10 1 3.3-2 6.3-2 10-1V5c-3.7-1-6.7-1-10 1zm0 0v15"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0 0 20 2.5 2.5 0 0 0 2.5-2.5c0-.6-.2-1.2-.6-1.6-.4-.4-.6-1-.6-1.6A2.5 2.5 0 0 1 15.8 14H18a4 4 0 0 0 4-4c0-4.4-4.5-8-10-8z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H7a5 5 0 0 1-.5-9.97A7 7 0 0 1 20 10.5a4.5 4.5 0 0 1-2.5 8.5z"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24"><path d="M21 2v6h-6M3 12a9 9 0 0 1 15-6.7L21 8M3 22v-6h6M21 12a9 9 0 0 1-15 6.7L3 16"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.9 17 22l-5-3-5 3 1.52-9.1"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3M8 22h8"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3m6-3v3M9 20v3m6-3v3M20 9h3m-3 6h3M1 9h3m-3 6h3"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Teacher Portal Pro — на головну">
+      <span class="brand-mark"><img src="assets/college-emblem.svg" alt="Стилізована емблема коледжу"></span>
+      <span class="brand-copy">
+        <strong>Teacher Portal <em>Pro</em> <span class="ver-pill">v3.1 RS4</span></strong>
+        <small>ДОДАТКОВО · ХМАРНИЙ ЖУРНАЛ · build 211</small>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="Навігація">
+      <a class="top-link" href="index.html">← На головну (Автор: Максим Ковалишин)</a>
+      <a class="top-link selected" href="khrystyna.html"><svg class="icon nav-ico icon-float"><use href="#i-cloud"/></svg> Додатково</a>
+      <a class="top-link" href="index.html#materials">Матеріали</a>
+      <a class="top-link" href="index.html#about">Про проєкт</a>
+    </nav>
+    <div class="header-actions">
+      <div class="theme-group" aria-label="8 тем оформлення v3.1 RS4">
+        <button class="theme-dot aurora on" data-theme-choice="aurora" title="Аврора" aria-label="Аврора"></button>
+        <button class="theme-dot emerald" data-theme-choice="emerald" title="Смарагд" aria-label="Смарагд"></button>
+        <button class="theme-dot daylight" data-theme-choice="daylight" title="Світлий день" aria-label="Світлий день"></button>
+        <button class="theme-dot sunset" data-theme-choice="sunset" title="Карпатський захід" aria-label="Карпатський захід"></button>
+        <button class="theme-dot cyber" data-theme-choice="cyber" title="Неоновий кіберпростір" aria-label="Неоновий кіберпростір"></button>
+        <button class="theme-dot ocean" data-theme-choice="ocean" title="Океанічний бриз" aria-label="Океанічний бриз"></button>
+        <button class="theme-dot sakura" data-theme-choice="sakura" title="Цвіт сакури RS4" aria-label="Цвіт сакури RS4"></button>
+        <button class="theme-dot gold" data-theme-choice="gold" title="Королівське золото RS4" aria-label="Королівське золото RS4"></button>
+      </div>
+      <a class="btn small primary" href="index.html">Головний портал <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container inner-page">
+    <div class="page-banner khrystyna-banner">
+      <div>
+        <span class="section-tag"><svg class="icon icon-float"><use href="#i-cloud"/></svg> ДОДАТКОВО · ОКРЕМА СТОРІНКА · v3.1 (build 211) RS4</span>
+        <h1>Інтегрування електронного журналу, оцінок та статистики в хмарне сховище</h1>
+        <p>Поглиблена технічно-методична стаття про синхронізацію оцінок 1–12, голосових нотаток студентів, AI-відповідей Gemini/ChatGPT, розрахунок якості знань і шкали ЄКТС у хмарній базі даних, а також авторський футер модератора <b>Христини Небещанської</b>.</p>
+        <div class="hero-buttons" style="margin-top:20px">
+          <a class="btn primary" href="index.html">Повернутися на головну (Автор: Максим Ковалишин) <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <img src="assets/cloud-sync-world.svg" alt="Ілюстрація хмарної синхронізації електронного журналу">
+    </div>
+
+    <article class="panel article-panel" style="margin-bottom:24px">
+      <div class="panel-heading">
+        <div>
+          <span class="section-tag"><svg class="icon icon-pulse"><use href="#i-book"/></svg> ДОДАТКОВО · НАУКОВО-ПРАКТИЧНА СТАТТЯ RS4</span>
+          <h2 style="margin:6px 0 0;font-size:26px">Архітектура хмарного електронного журналу, медіа-сховища та AI-аналітики у версії v3.1 (build 211) RS4</h2>
+        </div>
+        <span class="badge">Cloud DB · RS4 Multi-Region</span>
+      </div>
+      <div class="article-grid">
+        <div class="article-block">
+          <h3><svg class="icon icon-float"><use href="#i-cloud"/></svg> 1. Хмарна синхронізація оцінок та голосових нотаток</h3>
+          <p>Інтеграція електронного журналу в хмарне сховище у релізі <b>v3.1 (build 211) RS4</b> забезпечує збереження не лише оцінок за лекції, практичні й контрольні роботи, але й <b>голосових повідомлень та текстових нотаток студентів</b> до кожної дисципліни у централізованій базі даних із миттєвою реплікацією між пристроями викладача та групи К-41.</p>
+        </div>
+        <div class="article-block">
+          <h3><svg class="icon icon-pulse"><use href="#i-database"/></svg> 2. Обчислення статистики, ЄКТС та радар компетентностей</h3>
+          <p>Хмарний аналітичний шар автоматично агрегує середній бал кожного студента, відсоток заповнення журналу, показник якості знань групи, оцінку за шкалою ЄКТС (<code>A, B, C, D, E, FX</code>) та 5-осьовий радар компетентностей.</p>
+        </div>
+        <div class="article-block">
+          <h3><svg class="icon icon-pulse"><use href="#i-cpu"/></svg> 3. Інтеграція AI-шлюзів Gemini 2.5 Pro та ChatGPT-4o</h3>
+          <p>Завдяки хмарному конвеєру викладач може одним запитом у кабінеті згенерувати індивідуальні практичні завдання, критерії оцінювання або аналітичний звіт по успішності студентів та зберегти їх безпосередньо в хмарний документообіг.</p>
+        </div>
+        <div class="article-block">
+          <h3><svg class="icon icon-float"><use href="#i-award"/></svg> 4. Захист цілісності SHA-256 та авторський колектив</h3>
+          <p>Кожен хмарний пакет журналу підписується криптографічним гешем <code>SHA-256</code>. Головний автор та адмін порталу: <b>Максим Ковалишин</b>. Модератор та куратор цієї окремої сторінки: <b>Христина Небещанська</b>. Викладач-наставник: <b>Тетяна Гаркот</b>.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:24px">
+        <h3 style="margin:0 0 12px;font-size:18px;display:flex;align-items:center;gap:8px"><svg class="icon icon-pulse"><use href="#i-database"/></svg> Порівняльна таблиця архітектури збереження журналу (Локальна vs Гібридна vs Хмарна v3.1 RS4)</h3>
+        <div class="table-scroll">
+          <table class="grades-table">
+            <thead>
+              <tr>
+                <th>Параметр / Критерій</th>
+                <th>Паперовий / Локальний журнал</th>
+                <th>Базовий веб-журнал (v2.x)</th>
+                <th>Хмарне сховище v3.1 (build 211) RS4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Синхронізація оцінок 1–12</b></td>
+                <td>Ручне перенесення</td>
+                <td>Локальний браузер (LocalStorage)</td>
+                <td><span class="score-pill">Миттєва реплікація Cloud + Offline Cache</span></td>
+              </tr>
+              <tr>
+                <td><b>Розрахунок статистики та ЄКТС</b></td>
+                <td>Калькулятор у кінці семестру</td>
+                <td>Базовий середній бал</td>
+                <td><span class="score-pill">Авто-розрахунок A–FX, Якість знань %, Радар груп</span></td>
+              </tr>
+              <tr>
+                <td><b>Нотатки та голосові студентів</b></td>
+                <td>Відсутні</td>
+                <td>Відсутні</td>
+                <td><span class="score-pill">Аудіо-нотатки + конспекти до кожної лекції</span></td>
+              </tr>
+              <tr>
+                <td><b>AI-асистент викладача</b></td>
+                <td>Відсутній</td>
+                <td>Відсутній</td>
+                <td><span class="score-pill">Інтеграція запитів Gemini & ChatGPT у кабінеті</span></td>
+              </tr>
+              <tr>
+                <td><b>Кіберзахист та бекапи</b></td>
+                <td>Високий ризик втрати</td>
+                <td>Ручний JSON-експорт</td>
+                <td><span class="score-pill">SHA-256 підпис пакетів + 3-кратна реплікація</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<!-- ОНОВЛЕНИЙ ФУТЕР ХРИСТИНИ ТА COPYRIGHT НА ОКРЕМІЙ СТОРІНЦІ «ДОДАТКОВО» -->
+<footer class="site-footer khrystyna-page-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/college-emblem.svg" alt="Стилізована емблема коледжу">
+      <div>
+        <strong>Teacher Portal Pro <span>v3.1 (build 211) RS4</span></strong>
+        <small>ВСП «Стрийський фаховий коледж ЛНУП»</small>
+        <small class="footer-primary-credit">Футер Христини · Модератор: Христина Небещанська</small>
+      </div>
+    </div>
+    <div>
+      <span class="footer-label">АВТОРИ</span>
+      <b>Автори:</b>
+      <b>Адмін: Максим Ковалишин</b>
+      <b>Модератор: Христина Небещанська</b>
+      <b>Викладач: Тетяна Гаркот</b>
+    </div>
+    <div>
+      <span class="footer-label">АВТОРСЬКИЙ ФУТЕР СТОРІНКИ «ДОДАТКОВО»</span>
+      <b>Модератор: Христина Небещанська</b>
+      <small>На головній і в загальному — Автор: Максим Ковалишин</small>
+      <a href="index.html">← На головну сторінку порталу</a>
+    </div>
+    <div>
+      <span class="footer-label">ВИКЛАДАЧ ТА ПЛАТФОРМА</span>
+      <b>Викладач: Тетяна Гаркот</b>
+      <a href="https://sclnau.com.ua/" target="_blank" rel="noopener noreferrer">sclnau.com.ua ↗</a>
+      <small>Версія: v3.1 (build 211) RS4</small>
+    </div>
+  </div>
+  <div class="container footer-bottom-bar">
+    <div class="copyright-line">
+      <span>© 2026 <b>Teacher Portal Pro v3.1 (build 211) RS4</b> · Футер Христини Небещанської (Адмін: Максим Ковалишин, Модератор: Христина Небещанська, Викладач: Тетяна Гаркот). Усі авторські права захищено.</span>
+    </div>
+    <div class="footer-tech-badges">
+      <span class="tech-pill"><svg class="icon icon-float"><use href="#i-cloud"/></svg> Cloud Sync RS4</span>
+      <span class="tech-pill"><svg class="icon icon-pulse"><use href="#i-shield"/></svg> SHA-256 Protected</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const KEY='tpp_v2_';
+    const themes=['aurora','emerald','daylight','sunset','cyber','ocean','sakura','gold'];
+    function applyTheme(t){
+      if(!themes.includes(t))t='aurora';
+      document.body.dataset.theme=t;
+      try{localStorage.setItem(KEY+'theme',JSON.stringify(t))}catch{}
+      document.querySelectorAll('[data-theme-choice]').forEach(b=>b.classList.toggle('on',b.dataset.themeChoice===t));
+    }
+    try{
+      const saved=JSON.parse(localStorage.getItem(KEY+'theme')||'"aurora"');
+      applyTheme(saved);
+    }catch{applyTheme('aurora')}
+    document.addEventListener('click',e=>{
+      const btn=e.target.closest('[data-theme-choice]');
+      if(btn)applyTheme(btn.dataset.themeChoice);
+    });
+  })();
+</script>
+</body>
+</html>

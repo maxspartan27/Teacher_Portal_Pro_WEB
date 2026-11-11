@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-labelledby="cloudTitle">
+  <title id="cloudTitle">Інтеграція електронного журналу та статистики у хмарне сховище</title>
+  <defs>
+    <linearGradient id="cGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="cloudBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="panelBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <filter id="glowF" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <circle cx="360" cy="250" r="215" fill="url(#cGrad)" opacity="0.14"/>
+  <circle cx="360" cy="250" r="175" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="8 10" opacity="0.45"/>
+  <circle cx="360" cy="250" r="130" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="4 8" opacity="0.35"/>
+
+  <!-- Лінії синхронізації -->
+  <g stroke="url(#cGrad)" stroke-width="3.5" stroke-dasharray="7 7" fill="none">
+    <path d="M175 330 Q260 240 310 195"/>
+    <path d="M545 330 Q460 240 410 195"/>
+    <path d="M360 365 L360 225"/>
+  </g>
+
+  <!-- Центральна хмара даних -->
+  <g transform="translate(215 55)" filter="url(#glowF)">
+    <path d="M75 135 H225 A48 48 0 0 0 232 41 A68 68 0 0 0 102 28 A55 55 0 0 0 38 82 A45 45 0 0 0 75 135 Z" fill="url(#cloudBody)" stroke="#60a5fa" stroke-width="4"/>
+    <rect x="95" y="56" width="100" height="58" rx="12" fill="#1e293b"/>
+    <path d="M115 94 L133 76 L149 86 L172 66" fill="none" stroke="#34d399" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="172" cy="66" r="4.5" fill="#38bdf8"/>
+    <text x="145" y="128" text-anchor="middle" fill="#1e3a8a" font-family="Inter,sans-serif" font-weight="900" font-size="11">CLOUD DB · RS2</text>
+  </g>
+
+  <!-- Ліва картка: Електронний журнал (Оцінки 1-12) -->
+  <g transform="translate(55 275)">
+    <rect width="195" height="145" rx="18" fill="url(#panelBg)" stroke="#6366f1" stroke-width="3"/>
+    <rect x="16" y="16" width="110" height="12" rx="6" fill="#818cf8"/>
+    <circle cx="168" cy="22" r="7" fill="#34d399"/>
+    <g transform="translate(16 42)">
+      <rect width="36" height="28" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+      <text x="18" y="19" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="800" font-size="13">12</text>
+      <rect x="44" width="36" height="28" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="62" y="19" text-anchor="middle" fill="#38bdf8" font-family="Inter,sans-serif" font-weight="800" font-size="13">11</text>
+      <rect x="88" width="36" height="28" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+      <text x="106" y="19" text-anchor="middle" fill="#c084fc" font-family="Inter,sans-serif" font-weight="800" font-size="13">10</text>
+      <rect x="132" width="32" height="28" rx="6" fill="#34d399" opacity="0.2"/>
+      <text x="148" y="19" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="900" font-size="12">A</text>
+    </g>
+    <rect x="16" y="84" width="163" height="10" rx="5" fill="#334155"/>
+    <rect x="16" y="84" width="132" height="10" rx="5" fill="#38bdf8"/>
+    <text x="16" y="118" fill="#94a3b8" font-family="Inter,sans-serif" font-weight="700" font-size="11">Журнал групи К-41 · Sync</text>
+  </g>
+
+  <!-- Центральний вузол: Шифрування та SHA-256 -->
+  <g transform="translate(285 335)">
+    <rect width="150" height="110" rx="18" fill="url(#panelBg)" stroke="#38bdf8" stroke-width="3"/>
+    <circle cx="75" cy="42" r="22" fill="#0ea5e9" opacity="0.2"/>
+    <path d="M65 42 l7 7 l14 -14" fill="none" stroke="#34d399" stroke-width="4" stroke-linecap="round"/>
+    <text x="75" y="82" text-anchor="middle" fill="#e2e8f0" font-family="Inter,sans-serif" font-weight="800" font-size="12">SHA-256 · JSON</text>
+    <text x="75" y="98" text-anchor="middle" fill="#38bdf8" font-family="Inter,sans-serif" font-weight="700" font-size="10">v2.9 (build 240)</text>
+  </g>
+
+  <!-- Права картка: Аналітика та Статистика -->
+  <g transform="translate(470 275)">
+    <rect width="195" height="145" rx="18" fill="url(#panelBg)" stroke="#34d399" stroke-width="3"/>
+    <rect x="16" y="16" width="120" height="12" rx="6" fill="#34d399"/>
+    <g transform="translate(22 46)">
+      <rect x="0" y="34" width="22" height="38" rx="5" fill="#6366f1"/>
+      <rect x="34" y="18" width="22" height="54" rx="5" fill="#38bdf8"/>
+      <rect x="68" y="6" width="22" height="66" rx="5" fill="#34d399"/>
+      <rect x="102" y="14" width="22" height="58" rx="5" fill="#f59e0b"/>
+      <circle cx="145" cy="36" r="22" fill="none" stroke="#38bdf8" stroke-width="6"/>
+      <circle cx="145" cy="36" r="22" fill="none" stroke="#34d399" stroke-width="6" stroke-dasharray="95 140"/>
+    </g>
+    <text x="20" y="132" fill="#94a3b8" font-family="Inter,sans-serif" font-weight="700" font-size="11">Хмарна статистика LIVE</text>
+  </g>
+
+  <!-- Декоративні іскри -->
+  <g fill="#38bdf8">
+    <circle cx="140" cy="140" r="5"/><circle cx="580" cy="130" r="6"/><circle cx="620" cy="230" r="4"/><circle cx="105" cy="220" r="4"/>
+  </g>
+</svg>

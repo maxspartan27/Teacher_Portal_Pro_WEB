@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 144" role="img" aria-label="Стилізована емблема: книга, зубчасті колеса і колосся">
+<defs><linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5a9557"/><stop offset="1" stop-color="#1c5b3d"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7d483"/><stop offset="1" stop-color="#b69043"/></linearGradient></defs>
+<path d="M64 5 118 11v63c0 30-20 49-54 65C30 123 10 104 10 74V11Z" fill="#fffdf5" stroke="#2c6944" stroke-width="4"/>
+<path d="M64 12 111 17v57c0 25-17 42-47 56C34 116 17 99 17 74V17Z" fill="none" stroke="#5b8d54" stroke-width="1.5"/>
+<path d="M30 38 Q47 30 64 39 Q82 30 98 38v25Q81 57 64 65Q48 57 30 63Z" fill="#d7e9d1" stroke="#3c7946" stroke-width="2.5"/>
+<path d="M64 39v26m-31-22q16-6 27 2m7 0q12-8 28-2" fill="none" stroke="#75a379" stroke-width="2"/>
+<text x="48" y="52" font-family="Arial,sans-serif" font-size="15" font-weight="900" text-anchor="middle" fill="#347443">19</text><text x="81" y="52" font-family="Arial,sans-serif" font-size="15" font-weight="900" text-anchor="middle" fill="#347443">45</text>
+<g fill="url(#green)" stroke="#1c5c3b" stroke-width="1.1"><path d="M50 72 54 76l6-1 2 5 6 1-1 6 4 4-4 5 1 6-6 1-2 5-6-1-4 4-5-4-6 1-2-5-6-1 1-6-4-5 4-4-1-6 6-1 2-5 6 1z"/><circle cx="52" cy="92" r="12" fill="#f0f6e7"/><circle cx="52" cy="92" r="5" fill="#3b8054"/><path d="m81 74 4 3 5-1 2 4 5 2-2 5 3 4-4 4v5l-6 1-3 4-5-2-5 2-3-4-6-1v-5l-4-4 3-4-2-5 5-2 2-4 5 1z" transform="translate(-5,4) scale(.86)"/><circle cx="64" cy="82" r="7" fill="#f4f6e8"/></g>
+<g stroke="url(#gold)" stroke-width="2" fill="none" stroke-linecap="round"><path d="M27 107C19 95 18 81 24 67M34 117C25 111 20 104 16 94M99 107c8-12 9-26 3-40M92 117c9-6 14-13 18-23"/><path d="m24 72-6-10m7 19-10-9m11 18-13-7m17 17-14-4m16 14-13-1m84-37 6-10m-7 19 10-9m-11 18 13-7m-17 17 14-4m-16 14 13-1"/></g><path d="M44 118Q64 127 84 118" stroke="#b69043" stroke-width="2" fill="none"/>
+</svg>
